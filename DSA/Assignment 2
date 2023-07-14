@@ -1,1 +1,210 @@
+Question 1 Given an integer array nums of 2n integers, group these integers into n pairs (a1, b1), (a2, b2),..., (an, bn) such that the sum of min(ai, bi) for all i is maximized. Return the maximized sum.
+Example 1: Input: nums = [1,4,3,2] Output: 4
+Explanation: All possible pairings (ignoring the ordering of elements) are:
+1.	(1, 4), (2, 3) -> min(1, 4) + min(2, 3) = 1 + 2 = 3
+2.	(1, 3), (2, 4) -> min(1, 3) + min(2, 4) = 1 + 2 = 3
+3.	(1, 2), (3, 4) -> min(1, 2) + min(3, 4) = 1 + 3 = 4 So the maximum possible sum is 4
+Solution:
+Python Code
 
+def func(l1):
+    l1.sort()
+    max=0
+    for i in range(0, len(l1),2):
+        max+=l1[i]
+    return max
+    
+
+str1 = input()
+str1 = str1.replace('[','')
+str1 = str1.replace(']','')
+l = list(map(int,str1.split(',')))
+result = func(l)
+print(result)
+
+Question 2 Alice has n candies, where the ith candy is of type candyType[i]. Alice noticed that she started to gain weight, so she visited a doctor. The doctor advised Alice to only eat n / 2 of the candies she has (n is always even). Alice likes her candies very much, and she wants to eat the maximum number of different types of candies while still following the doctor's advice. Given the integer array candyType of length n, return the maximum number of different types of candies she can eat if she only eats n / 2 of them. 
+Example 1: Input: candyType = [1,1,2,2,3,3] Output: 3 
+Explanation: Alice can only eat 6 / 2 = 3 candies. Since there are only 3 types, she can eat one of each type.
+
+Solution:
+Python Code:
+
+def func(l):
+    l.sort()
+    m=len(l)//2
+    for i in range(0,len(l)//2):
+        if l[i] == l[i+1]:
+            l.remove(l[i+1])
+    return len(l[:m])
+
+import json
+str1 = input()
+l=json.loads(str1)
+result=func(l)
+print(result)
+
+Question 3 We define a harmonious array as an array where the difference between its maximum value and its minimum value is exactly 1. Given an integer array nums, return the length of its longest harmonious subsequence among all its possible subsequences. A subsequence of an array is a sequence that can be derived from the array by deleting some or no elements without changing the order of the remaining elements. 
+Example 1: Input: nums = [1,3,2,2,5,2,3,7] Output: 5 
+Explanation: The longest harmonious subsequence is [3,2,2,2,3].
+Solution:
+Python Code:
+
+def func(l):
+    m=l.copy()
+    l.sort()
+    length=1
+    length1 = []
+    series = []
+    n=[]
+    for i in range(0,len(l)-1):
+        n.append(l[i])
+        for j in range(i+1, len(l)):
+            n.append(l[j])
+            if max(n)-min(n)==1 or max(n)-min(n)==0:
+                length+=1
+                series.append(n)
+        n.clear()
+        length1.append(length)
+        length=1
+    return (length1)
+
+import json
+str1 = input()
+l=json.loads(str1)
+result=func(l)
+print(result)
+
+Question 4 You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots. Given an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise. Example 1: Input: flowerbed = [1,0,0,0,1], n = 1 Output: true
+Solution:
+Python Code:
+
+def func(l,n):
+    c = l.count(1)
+    c+=n
+    m=0
+    for i in range(0,len(l)-1):
+        if l[i]==1 and l[i+1]==1 :
+            m=1
+            break
+    if m == 1:
+        return 'false'
+    else:
+        if len(l)%2==0:
+            if c > len(l)//2:
+                return 'false'
+            else:
+                return 'true'
+        else:
+            if c > len(l)//2+1:
+                return 'false'
+            else:
+                return 'true'
+
+import json
+str1 = input()
+l=json.loads(str1)
+n=int(input())
+result=func(l,n)
+print(result)
+
+Question 5 Given an integer array nums, find three numbers whose product is maximum and return the maximum product. 
+Example 1: Input: nums = [1,2,3] Output: 6
+Solution:
+Python Code:
+
+def func(l):
+    if len(l)<3:
+        return 'Invalid Input'
+    else:
+        c=1
+        l.sort()
+        c = c*l[-1]*l[-2]*l[-3]
+        return c
+
+import json
+str1 = input()
+l=json.loads(str1)
+result=func(l)
+print(result)
+
+Question 6: Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1. You must write an algorithm with O(log n) runtime complexity. 
+Input: nums = [-1,0,3,5,9,12], target = 9 Output: 4 
+Explanation: 9 exists in nums and its index is 4
+Solution:
+Python Code:
+
+def func(l,tar):
+    m='a'
+    for i in range(0,len(l)):
+        if l[i]==tar:
+            return i
+            m='b'
+            break
+    if m=='a':
+        return -1
+
+import json
+str1 = input()
+l=json.loads(str1)
+tar=int(input())
+result=func(l,tar)
+print(result)
+
+Question 7 An array is monotonic if it is either monotone increasing or monotone decreasing. An array nums is monotone increasing if for all i <= j, nums[i] <= nums[j]. An array nums is monotone decreasing if for all i <= j, nums[i] >= nums[j]. Given an integer array nums, return true if the given array is monotonic, or false otherwise. 
+Example 1: Input: nums = [1,2,2,3] Output: true
+Solution:
+Python Code:
+
+def func(l):
+    m=l.copy()
+    l.sort()
+    c=0
+    if l==m:
+        return 'true'
+    for i in range(0,len(l)):
+        c-=1
+        if l[i] == m[c]:
+            continue
+        else:
+            return 'false'
+            break
+
+    if c*-1==len(l):
+        return 'true'
+
+import json
+str1 = input()
+l=json.loads(str1)
+result=func(l)
+print(result)
+
+Question 8 You are given an integer array nums and an integer k. In one operation, you can choose any index i where 0 <= i < nums.length and change nums[i] to nums[i] + x where x is an integer from the range [-k, k]. You can apply this operation at most once for each index i. The score of nums is the difference between the maximum and minimum elements in nums. Return the minimum score of nums after applying the mentioned operation at most once for each index in it. 
+Example 1: Input: nums = [1], k = 0 Output: 0 
+Explanation: The score is max(nums) - min(nums) = 1 - 1 = 0.
+Solution:
+Python Code:
+
+def func(l,m):
+    n = len(l)
+    l.sort()
+
+    min_val = l[0] + m
+    max_val = l[n-1] - m
+
+    min_score = l[n-1] - l[0]
+
+    for i in range(n-1):
+        new_min_val = min(l[i+1]-m, min_val)
+        new_max_val = max(l[i]+m, max_val)
+        
+        new_score = new_max_val - new_min_val
+        min_score = min(min_score, new_score)
+
+    return min_score
+    
+import json
+str1 = input()
+l=json.loads(str1)
+m=int(input())
+result=func(l,m)
+print(result)
