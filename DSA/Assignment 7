@@ -1,0 +1,210 @@
+Question 1
+Given two strings s and t, determine if they are isomorphic.
+Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
+Example 1:
+Input: s = "egg", t = "add"
+Output: true
+Solution:
+Python Code:
+
+def func(l1, l2):
+    if len(l1) != len(l2):
+        return False
+    s_map = {}
+    t_map = {}
+    for i in range(len(l1)):
+        m = l1[i]
+        n = l2[i]
+        if m in s_map:
+            if s_map[m] != n:
+                return False
+        else:
+            s_map[m] = n
+        if n in t_map:
+            if t_map[n] != m:
+                return False
+        else:
+            t_map[n] = m
+    return True
+l1=input()
+l2=input()
+result = func(l1,l2)
+print(result)
+
+Question 2
+Given a string num which represents an integer, return true if num is a strobogrammatic number.
+A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).
+Example 1:
+Input: num = "69"
+Output:true
+Solution:
+Python Code:
+
+def func(l):
+    mapp = {'0': '0', '1': '1', '6': '9', '8': '8', '9': '6'}
+    left, right = 0, len(l) - 1
+
+    while left <= right:
+        if l[left] not in mapp or mapp[l[left]] != l[right]:
+            return False
+        left += 1
+        right -= 1
+
+    return True
+l=input()
+result = func(l)
+print(result)
+
+Question 3
+Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
+You must solve the problem without using any built-in library for handling large integers (such as BigInteger). You must also not convert the inputs to integers directly.
+Example 1:
+Input: num1 = "11", num2 = "123"
+Output:"134"
+Solution:
+Python Code:
+
+def func(l1,l2):
+    i, j = len(l1) - 1, len(l2) - 1
+    c = 0
+    r = ""
+    while i >= 0 or j >= 0:
+        x = int(l1[i]) if i >= 0 else 0
+        y = int(l2[j]) if j >= 0 else 0
+        summ = x + y + c
+        r = str(summ % 10) + r
+        c = summ // 10
+        i -= 1
+        j -= 1
+    if c:
+        r = str(c) + r
+    return r
+
+l1=input()
+l2=input()
+result = func(l1,l2)
+print(result)
+
+Question 4
+Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+Example 1:
+Input: s = "Let's take LeetCode contest"
+Output: "s'teL ekat edoCteeL tsetnoc"
+Solution:
+Python Code:
+
+def func(l1):
+    words = l1.split()
+    reversed_words = [word[::-1] for word in words]
+    result = " ".join(reversed_words)
+    return result
+    
+l1=input()
+result = func(l1)
+print(result)
+
+Question 5
+Given a string s and an integer k, reverse the first k characters for every 2k characters counting from the start of the string.
+If there are fewer than k characters left, reverse all of them. If there are less than 2k but greater than or equal to k characters, then reverse the first k characters and leave the other as original.
+Example 1:
+Input: s = "abcdefg", k = 2
+Output:"bacdfeg"
+Solution:
+Python Code:
+
+def func(l,k):
+    l = list(l)
+    i = 0
+    while i < len(l):
+        # Reverse the characters from index i to i + k
+        l[i:i+k] = l[i:i+k][::-1]
+        i += 2 * k
+
+    return "".join(l)
+    
+l1=input()
+k=int(input())
+result = func(l1,k)
+print(result)
+
+
+Question 6
+Given two strings s and goal, return true if and only if s can become goal after some number of shifts on s.
+A shift on s consists of moving the leftmost character of s to the rightmost position.
+•	For example, if s = "abcde", then it will be "bcdea" after one shift.
+Example 1:
+Input: s = "abcde", goal = "cdeab"
+Output:true
+Solution:
+Python Code:
+
+def func(l,k):
+    if len(l) != len(k):
+        return False
+    h = l + l
+    if k in h:
+        return True
+    return False
+
+l1=input()
+k=input()
+result = func(l1,k)
+print(result)
+
+Question 7
+Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
+Note that after backspacing an empty text, the text will continue empty.
+Example 1:
+Input: s = "ab#c", t = "ad#c"
+Output: true
+Explanation:Both s and t become "ac".
+
+def func(l,k):
+    m = []
+    n = []
+    for i in l:
+        if i != '#':
+            m.append(i)
+        elif m:
+            m.pop()
+    for j in k:
+        if j != '#':
+            n.append(j)
+        elif n:
+            n.pop()
+    return m == n
+
+l1=input()
+k=input()
+result = func(l1,k)
+print(result)
+
+
+Question 8
+You are given an array coordinates, coordinates[i] = [x, y], where [x, y] represents the coordinate of a point. Check if these points make a straight line in the XY plane.
+Example 1:
+Input: coordinates = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]
+Output: true
+Solution:
+Python Code:
+
+def func(l):
+    if len(l) < 2:
+        return True
+
+    x1, y1 = l[0]
+    x2, y2 = l[1]
+    slope = (y2 - y1) / (x2 - x1)
+
+    for i in range(2, len(l)):
+        xi, yi = l[i]
+        curr_slope = (yi - y1) / (xi - x1)
+        if curr_slope != slope:
+            return False
+
+    return True
+
+l1=input()
+result = func(l1)
+print(result)
