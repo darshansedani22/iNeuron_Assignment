@@ -25,10 +25,9 @@ def func(l1,m,n):
 
     return arr
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
+l1 = json.loads(str1)
 m=int(input())
 n=int(input())
 result = func(l1,m,n)
@@ -38,6 +37,9 @@ Question 2
 You have n coins and you want to build a staircase with these coins. The staircase consists of k rows where the ith row has exactly i coins. The last row of the staircase may be incomplete.
 Given the integer n, return the number of complete rows of the staircase you will build.
 Example 1:
+Input: n = 5
+Output: 2
+Explanation: Because the 3rd row is incomplete, we return 2.
 Solution:
 Python Code:
 
@@ -73,11 +75,10 @@ def func(l1):
     m.sort()
     return m
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-result = func(l)
+import json
+str1 = input()
+l1 = json.loads(str1)
+result = func(l1)
 print(result)
 
 Question 4
@@ -111,14 +112,11 @@ def func(l1,l2):
     s.append(s2)
     return s
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
+l1 = json.loads(str1)
 str2 = input()
-str2 = str2.replace('[','')
-str2 = str2.replace(']','')
-l2 = list(map(int,str2.split(',')))
+l2 = json.loads(str2)
 result = func(l1,l2)
 print(result)
 
@@ -159,14 +157,11 @@ def func(l1, l2, m):
             d += 1
     return d
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
+l1 = json.loads(str1)
 str2 = input()
-str2 = str2.replace('[','')
-str2 = str2.replace(']','')
-l2 = list(map(int,str2.split(',')))
+l2 = json.loads(str2)
 m=int(input())
 result = func(l1,l2,m)
 print(result)
@@ -189,10 +184,9 @@ def func(l1):
             n+=1
     return n
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
+l1 = json.loads(str1)
 result = func(l1)
 print(result)
 
@@ -218,10 +212,9 @@ def func(l1):
     c = l1.index(m[0])
     return c
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
+l1 = json.loads(str1)
 result = func(l1)
 print(result)
 
@@ -249,9 +242,9 @@ def func(l1):
         l1.remove(max(l1))
     m.sort()
     return m
+
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
+l1 = json.loads(str1)
 result = func(l1)
 print(result)
