@@ -15,18 +15,13 @@ def func(l1,l2,l3):
     a = list(s)
     return a
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
+l1 = json.loads(str1)
 str2 = input()
-str2 = str2.replace('[','')
-str2 = str2.replace(']','')
-l2 = list(map(int,str2.split(',')))
+l2 = json.loads(str2)
 str3 = input()
-str3 = str3.replace('[','')
-str3 = str3.replace(']','')
-l3 = list(map(int,str3.split(',')))
+l3 = json.loads(str3)
 result = func(l1,l2,l3)
 print(result)
 
@@ -61,14 +56,11 @@ def func(l1,l2):
     s.append(s2)
     return s
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
+l1 = json.loads(str1)
 str2 = input()
-str2 = str2.replace('[','')
-str2 = str2.replace(']','')
-l2 = list(map(int,str2.split(',')))
+l2 = json.loads(str2)
 result = func(l1,l2)
 print(result)
 
@@ -88,18 +80,12 @@ def func(l1,l2,l3):
         series.append(c)
     return series
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l = list(map(int,str1.split(',')))
-c1=[]
-series1=[]
-for i in range(0,len(l),3):
-    c1=[l[i],l[i+1],l[i+2]]
-    series1.append(c1)
-l1 = series1[0]
-l2 = series1[1]
-l3 = series1[2]
+l = json.loads(str1)
+l1 = l[0]
+l2 = l[1]
+l3 = l[2]
 result = func(l1,l2,l3)
 print(result)
 
@@ -123,11 +109,10 @@ def func(l1):
     return max
     
 
+import json
 str1 = input()
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l = list(map(int,str1.split(',')))
-result = func(l)
+l1 = json.loads(str1)
+result = func(l1)
 print(result)
 
 Question 5 You have n coins and you want to build a staircase with these coins. The staircase consists of k rows where the ith row has exactly i coins. The last row of the staircase may be incomplete.
@@ -169,11 +154,10 @@ def func(l1):
     m.sort()
     return m
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-result = func(l)
+import json
+str1 = input()
+l1 = json.loads(str1)
+result = func(l1)
 print(result)
 
 Question 7 You are given an m x n matrix M initialized with all 0's and an array of operations ops, where ops[i] = [ai, bi] means M[x][y] should be incremented by one for all 0 <= x < ai and 0 <= y < bi.
@@ -193,16 +177,10 @@ def func(m: int, n: int, l: list[list[int]]) -> int:
 
 m=int(input())
 n=int(input())
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-c=[]
-series=[]
-for i in range(0,len(l),2):
-    c=[l[i],l[i+1]]
-    series.append(c)
-result = func(series,m,n)
+import json
+str1 = input()
+l1 = json.loads(str1)
+result = func(l1,m,n)
 print(result)
 
 Question 8 Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
@@ -221,11 +199,9 @@ def func(l,n):
         result.append(l[i + n])
     return result
     
-    
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
+import json
+str1 = input()
+l1 = json.loads(str1)
 n=int(input())
-result = func(l,n)
+result = func(l1,n)
 print(result)
