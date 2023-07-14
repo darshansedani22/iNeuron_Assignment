@@ -7,22 +7,23 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]
 Solution:
 Python Code
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-tar = int(input())
-m = []
-for i in range(0,len(l)):
-    for j in range(i+1,len(l)):
-        if l[i] + l[j] == tar:
-            m.append(i)
-            m.append(j)
-            print(m)
-            break
-        
-if len(m) == 0:
-    print('No Such elements found')
+def func(l,tar):
+    m = []
+    for i in range(0,len(l)):
+        for j in range(i+1,len(l)):
+            if l[i] + l[j] == tar:
+                m.append(i)
+                m.append(j)
+                return m
+                break    
+
+import json
+str1 = input()
+l1 = json.loads(str1)
+tar=int(input())
+result=func(l1,tar)
+print(result)
+
 
 Q2. Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
@@ -33,21 +34,23 @@ Explanation: Your function should return k = 2, with the first two elements of n
 Solution:
 Python Code:
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-val = int(input())
-m = []
-for i in range(0,len(l)):
-    if l[i] != val:
-        m.append(l[i])
-c=len(m)
-        
-for i in range(len(m),len(l)):
-    m.append('_')
+def func(l,val):
+    m = []
+    for i in range(0,len(l)):
+        if l[i] != val:
+            m.append(l[i])
+    c=len(m)
+    for i in range(len(m),len(l)):
+        m.append('_')
+    return c,m
 
-print(f'',c,f',',m)
+import json
+str1 = input()
+l1 = json.loads(str1)
+val=int(input())
+result,result1=func(l1,val)
+print(f'',result,f',',result1)
+
 Q3. Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 You must write an algorithm with O(log n) runtime complexity.
 Example 1: Input: nums = [1,3,5,6], target = 5
@@ -55,20 +58,22 @@ Output: 2
 Solution:
 Python Code:
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-tar = int(input())
-l.sort()
-print(l)
-for i in range(0, len(l)):
-    if (i == 0) and ((l[i] == tar) or (tar<l[i])):
-        print(i)
-    elif (l[i] == tar) or (l[i-1]<tar and tar<l[i]):
-        print(i)
-    elif (i==len(l)-1) and ((l[i] == tar) or (l[i]<tar)):
-        print(i+1)
+def func(l,tar):
+    l.sort()
+    for i in range(0, len(l)):
+        if (i == 0) and ((l[i] == tar) or (tar<l[i])):
+            return i
+        elif (l[i] == tar) or (l[i-1]<tar and tar<l[i]):
+            return i
+        elif (i==len(l)-1) and ((l[i] == tar) or (l[i]<tar)):
+            return i+1
+
+import json
+str1 = input()
+l1 = json.loads(str1)
+tar=int(input())
+result=func(l1,tar)
+print(result)
  
 Q4. You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
 Increment the large integer by one and return the resulting array of digits.
@@ -76,26 +81,29 @@ Example 1: Input: digits = [1,2,3] Output: [1,2,4]
 Solution:
 Python Code
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-c= 0
-d=len(l)-1
-g=0
-for i in range(0, len(l)):
-    c += l[i]*10**d
-    d-=1
-    if d==0:
-        c+=1
-d=len(l)-1
-l.clear()
-for i in range(0, d+1):
-    g = c//10**d
-    c-=g*10**d
-    d-=1
-    l.append(g)
-print(l)
+def func(l):
+    c= 0
+    d=len(l)-1
+    g=0
+    for i in range(0, len(l)):
+        c += l[i]*10**d
+        d-=1
+        if d==0:
+            c+=1    
+    d=len(l)-1
+    l.clear()
+    for i in range(0, d+1):
+        g = c//10**d
+        c-=g*10**d
+        d-=1
+        l.append(g)
+    return l
+
+import json
+str1 = input()
+l1 = json.loads(str1)
+result=func(l1)
+print(result)
  
 Q5. You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
 Merge nums1 and nums2 into a single array sorted in non-decreasing order.
@@ -104,22 +112,24 @@ Example 1: Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3 Output: [
 Solution:
 Python Code
 
+def func(l1,m,l2,n):
+    for i in range(m):
+        l1.remove(0)
+    for i in range(0,n):
+        l1.append(l2[i])
+    l1.sort()
+    return l1
+
+import json
 str1 = input()
-str2 = input()
-#m = input()
+l1 = json.loads(str1)
 m=int(input())
-#n = input()
+str2 = input()
+l2 = json.loads(str2)
 n=int(input())
-str1 = str1.replace('[','')
-str1 = str1.replace(']','')
-l1 = list(map(int,str1.split(',')))
-str2 = str2.replace('[','')
-str2 = str2.replace(']','')
-l2 = list(map(int,str2.split(',')))
-for i in range(0,n):
-    l1.append(l2[i])
-l1.sort()
-print(l1)
+result=func(l1,m,l2,n)
+print(result)
+
  
 Q6. Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 Example 1: Input: nums = [1,2,3,1]
@@ -127,20 +137,22 @@ Output: true
 Solution:
 Python Code:
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-c = 0
-for i in range(0,len(l)):
-    for j in range(i+1,len(l)):
-        if l[i] == l[j]:
-            c+=1
+def func(l):
+    c = 0
+    for i in range(0,len(l)):
+        for j in range(i+1,len(l)):
+            if l[i] == l[j]:
+                c+=1
+    if c!=0:
+        return 'true'
+    else:
+        return 'false'
 
-if c!=0:
-    print('true')
-else:
-    print('false')
+import json
+str1 = input()
+l1 = json.loads(str1)
+result=func(l1)
+print(result)
  
 Q7. Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the nonzero elements.
 Note that you must do this in-place without making a copy of the array.
@@ -148,18 +160,21 @@ Example 1: Input: nums = [0,1,0,3,12] Output: [1,3,12,0,0]
 Solution:
 Python Code:
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-c = 0
-for i in range(len(l)):
-    if l[i] == 0:
-        c+=1
-        l.remove(l[i])
-        l.append(0)
-print(l)
- 
+def func(l):
+    c = 0
+    for i in range(len(l)):
+        if l[i] == 0:
+            c+=1
+            l.remove(l[i])
+            l.append(0)
+    return l
+
+import json
+str1 = input()
+l1 = json.loads(str1)
+result=func(l1)
+print(result)
+
 Q8. You have a set of integers s, which originally contains all the numbers from 1 to n. Unfortunately, due to some error, one of the numbers in s got duplicated to another number in the set, which results in repetition of one number and loss of another number.
 You are given an integer array nums representing the data status of this set after the error.
 Find the number that occurs twice and the number that is missing and return them in the form of an array.
@@ -167,15 +182,18 @@ Example 1: Input: nums = [1,2,2,4] Output: [2,3]
 Solution:
 Python Code:
 
-str = input()
-str = str.replace('[','')
-str = str.replace(']','')
-l = list(map(int,str.split(',')))
-c = 0
-m=[]
-for i in range(len(l)):
-    for j in range(i+1, len(l)):
-        if l[i]==l[j]:
-            m.append(i+1)
-            m.append(l[i]+1)
-print(m)
+def func(l):
+    c = 0
+    m=[]
+    for i in range(len(l)):
+        for j in range(i+1, len(l)):
+            if l[i]==l[j]:
+                m.append(i+1)
+                m.append(l[i]+1)
+    return m
+
+import json
+str1 = input()
+l1 = json.loads(str1)
+result=func(l1)
+print(result)
