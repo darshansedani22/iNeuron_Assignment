@@ -1,0 +1,426 @@
+1. Scenario: A company wants to analyze the sales performance of its products in different regions. They have collected the following data:
+   Region A: [10, 15, 12, 8, 14]
+   Region B: [18, 20, 16, 22, 25]
+   Calculate the mean sales for each region.
+
+Solution:
+
+def func(l,m):
+    suml = sum(i for i in l)
+    summ = sum(i for i in m)
+    lenl = len(l)
+    lenm = len(m)
+    meanl = suml / lenl
+    meanm = summ / lenm
+    return meanl,meanm
+    
+import json
+l = input()
+m = input()
+l = json.loads(l)
+m = json.loads(m)
+resultl,resultm = func(l,m)
+print(f'For Region A :',resultl)
+print(f'For Region B :',resultm)
+
+2. Scenario: A survey is conducted to measure customer satisfaction on a scale of 1 to 5. The data collected is as follows:
+   [4, 5, 2, 3, 5, 4, 3, 2, 4, 5]
+   Calculate the mode of the survey responses.
+
+Solution:
+
+def func(l):
+    d={}
+    for i in l:
+        if i in d:
+            d[i]+=1
+        else:
+            d[i]=1
+    maxd = max(d.values())
+    mode = [i for i, j in d.items() if j==maxd]
+    return mode
+    
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
+
+3. Scenario: A company wants to compare the salaries of two departments. The salary data for Department A and Department B are as follows:
+   Department A: [5000, 6000, 5500, 7000]
+   Department B: [4500, 5500, 5800, 6000, 5200]
+   Calculate the median salary for each department.
+
+Solution:
+
+def func(l,m):
+    suml = sum(i for i in l)
+    summ = sum(i for i in m)
+    lenl = len(l)
+    lenm = len(m)
+    meanl = suml / lenl
+    meanm = summ / lenm
+    return meanl,meanm
+    
+import json
+l = input()
+m = input()
+l = json.loads(l)
+m = json.loads(m)
+resultl,resultm = func(l,m)
+print(f'For Department A :',resultl)
+print(f'For Department B :',resultm)
+
+
+4. Scenario: A data analyst wants to determine the variability in the daily stock prices of a company. The data collected is as follows:
+   [25.5, 24.8, 26.1, 25.3, 24.9]
+   Calculate the range of the stock prices.
+
+Solution:
+
+def func(l):
+    maxx=float('-inf')
+    minn=float('+inf')
+    for i in l:
+        maxx=max(i,maxx)
+        minn=min(i,minn)
+    return minn,maxx
+    
+import json
+l = input()
+l = json.loads(l)
+r1,r2 = func(l)
+print(f'Range of stock price is ',r1,' to ',r2)
+
+5. Scenario: A study is conducted to compare the performance of two different teaching methods. The test scores of the students in each group are as follows:
+   Group A: [85, 90, 92, 88, 91]
+   Group B: [82, 88, 90, 86, 87]
+   Perform a t-test to determine if there is a significant difference in the mean scores between the two groups.
+
+Solution:
+
+import numpy as np
+from scipy.stats import ttest_ind
+
+group_a = np.array([85, 90, 92, 88, 91])
+group_b = np.array([82, 88, 90, 86, 87])
+t_value, p_value = ttest_ind(group_a, group_b)
+print(t_value, p_value)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis. There is a significant difference in the mean scores between the two groups.")
+else:
+    print("Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the mean scores.")
+
+Output:
+1.43  0.19
+Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the mean scores.
+
+6. Scenario: A company wants to analyze the relationship between advertising expenditure and sales. The data collected is as follows:
+   Advertising Expenditure (in thousands): [10, 15, 12, 8, 14]
+   Sales (in thousands): [25, 30, 28, 20, 26]
+   Calculate the correlation coefficient between advertising expenditure and sales.
+
+Solution:
+
+import numpy as np
+a = np.array([10, 15, 12, 8, 14])
+s = np.array([25, 30, 28, 20, 26])
+corr = np.corrcoef(a, s)[0, 1]
+print(corr)
+Output:
+0.87
+
+
+7. Scenario: A survey is conducted to measure the heights of a group of people. The data collected is as follows:
+   [160, 170, 165, 155, 175, 180, 170]
+   Calculate the standard deviation of the heights.
+
+Solution:
+
+import numpy as np
+h = np.array([160, 170, 165, 155, 175, 180, 170])
+s = np.std(h, ddof=1)
+print(s)
+
+Output:
+8.591
+
+8. Scenario: A company wants to analyze the relationship between employee tenure and job satisfaction. The data collected is as follows:
+   Employee Tenure (in years): [2, 3, 5, 4, 6, 2, 4]
+   Job Satisfaction (on a scale of 1 to 10): [7, 8, 6, 9, 5, 7, 6]
+   Perform a linear regression analysis to predict job satisfaction based on employee tenure.
+
+Solution:
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+employee_tenure = np.array([2, 3, 5, 4, 6, 2, 4]).reshape((-1, 1))
+job_satisfaction = np.array([7, 8, 6, 9, 5, 7, 6])
+model = LinearRegression()
+model.fit(employee_tenure, job_satisfaction)
+print("Intercept:", model.intercept_)
+print("Slope:", model.coef_)
+
+Output:
+Intercept:8.6
+Slope: [-0.468]
+
+The intercept shows expected satisfaction when employee tenure is 0 is 8.6. With increase in experience at each year the satisfaction is decreasing by 0.486
+
+9. Scenario: A study is conducted to compare the effectiveness of two different medications. The recovery times of the patients in each group are as follows:
+   Medication A: [10, 12, 14, 11, 13]
+   Medication B: [15, 17, 16, 14, 18]
+   Perform an analysis of variance (ANOVA) to determine if there is a significant difference in the mean recovery times between the two medications.
+
+Solution:
+
+import numpy as np
+from scipy.stats import f_oneway
+a = np.array([10, 12, 14, 11, 13])
+b = np.array([15, 17, 16, 14, 18])
+f, p = f_oneway(a, b)
+print(f,p)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis. There is a significant difference in the mean recovery times between the two medications.")
+else:
+    print("Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the mean recovery times.")
+
+Output:
+16.0  0.004
+Reject the null hypothesis. There is a significant difference in the mean recovery times between the two medications.
+
+10. Scenario: A company wants to analyze customer feedback ratings on a scale of 1 to 10. The data collected is as follows:
+    [8, 9, 7, 6, 8, 10, 9, 8, 7, 8]
+    Calculate the 75th percentile of the feedback ratings.
+
+Solution:
+
+import numpy as np
+ratings = np.array([8, 9, 7, 6, 8, 10, 9, 8, 7, 8])
+perc = np.percentile(ratings, 75)
+print(perc)
+
+Output:
+8.75
+
+
+11. Scenario: A quality control department wants to test the weight consistency of a product. The weights of a sample of products are as follows:
+    [10.2, 9.8, 10.0, 10.5, 10.3, 10.1]
+    Perform a hypothesis test to determine if the mean weight differs significantly from 10 grams.
+
+Solution:
+
+import numpy as np
+from scipy.stats import t
+weights = np.array([10.2, 9.8, 10.0, 10.5, 10.3, 10.1])
+hypothesized_mean = 10
+sample_mean = np.mean(weights)
+sample_std = np.std(weights, ddof=1)  # ddof=1 for sample standard deviation
+n = len(weights)
+t_value = (sample_mean - hypothesized_mean) / (sample_std / np.sqrt(n))
+alpha = 0.05
+df = n - 1
+critical_t = t.ppf(1 - alpha/2, df)
+print(critical_t,t_value)
+if abs(t_value) > critical_t:
+    print("Reject the null hypothesis. The mean weight differs significantly from 10 grams.")
+else:
+    print("Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the mean weight.")
+
+Output:
+2.57	1.52
+Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the mean weight.
+
+12. Scenario: A company wants to analyze the click-through rates of two different website designs. The number of clicks for each design is as follows:
+    Design A: [100, 120, 110, 90, 95]
+    Design B: [80, 85, 90, 95, 100]
+    Perform a chi-square test to determine if there is a significant difference in the click-through rates between the two designs.
+
+Solution:
+
+import numpy as np
+from scipy.stats import chi2_contingency
+a = np.array([100, 120, 110, 90, 95])
+b = np.array([80, 85, 90, 95, 100])
+cont = np.array([a, b])
+chi2_value, p_value, _, _ = chi2_contingency(cont)
+print(p_value)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis. There is a significant difference in the click-through rates between the two designs.")
+else:
+    print("Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the click-through rates.")
+
+Output:
+0.19
+Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the click-through rates.
+
+13. Scenario: A survey is conducted to measure customer satisfaction with a product on a scale of 1 to 10. The data collected is as follows:
+    [7, 9, 6, 8, 10, 7, 8, 9, 7, 8]
+    Calculate the 95% confidence interval for the population mean satisfaction score.
+
+Solution:
+
+import numpy as np
+from scipy.stats import t
+scores = np.array([7, 9, 6, 8, 10, 7, 8, 9, 7, 8])
+smean = np.mean(scores)
+sstd = np.std(scores, ddof=1)
+alpha = 0.05
+critical_value = t.ppf(1 - alpha/2, df=len(scores)-1)
+serror = sstd / np.sqrt(len(scores))
+merror = critical_value * serror
+clower = smean - merror
+cupper = smean + merror
+print("Lower bound:", clower)
+print("Upper bound:", cupper)
+
+Output:
+Lower bound = 7.04
+Upper bound = 8.76
+
+14. Scenario: A company wants to analyze the effect of temperature on product performance. The data collected is as follows:
+    Temperature (in degrees Celsius): [20, 22, 23, 19, 21]
+    Performance (on a scale of 1 to 10): [8, 7, 9, 6, 8]
+    Perform a simple linear regression to predict performance based on temperature.
+
+Solution:
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+temperature = np.array([20, 22, 23, 19, 21]).reshape((-1, 1))
+performance = np.array([8, 7, 9, 6, 8])
+model = LinearRegression()
+model.fit(temperature, performance)
+print("Intercept:", model.intercept_)
+print("Slope:", model.coef_)
+
+Output:
+Intercept: -2.8999
+Slope: [0.5]
+
+15. Scenario: A study is conducted to compare the preferences of two groups of participants. The preferences are measured on a Likert scale from 1 to 5. The data collected is as follows:
+    Group A: [4, 3, 5, 2, 4]
+    Group B: [3, 2, 4, 3, 3]
+    Perform a Mann-Whitney U test to determine if there is a significant difference in the median preferences between the two groups.
+
+Solution:
+
+import numpy as np
+from scipy.stats import mannwhitneyu
+a = np.array([4, 3, 5, 2, 4])
+b = np.array([3, 2, 4, 3, 3])
+stats, p_value = mannwhitneyu(a, b, alternative='two-sided')
+print(p_value)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis. There is a significant difference in the median preferences between the two groups.")
+else:
+    print("Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the median preferences.")
+
+Output:
+0.38
+Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the median preferences.
+
+16. Scenario: A company wants to analyze the distribution of customer ages. The data collected is as follows:
+    [25, 30, 35, 40, 45, 50, 55, 60, 65, 70]
+    Calculate the interquartile range (IQR) of the ages.
+
+Solution:
+
+import numpy as np
+ages = np.array([25, 30, 35, 40, 45, 50, 55, 60, 65, 70])
+q1 = np.percentile(ages, 25)
+q3 = np.percentile(ages, 75)
+iqr = q3 - q1
+print(iqr)
+
+Output:
+22.5
+
+17. Scenario: A study is conducted to compare the performance of three different machine learning algorithms. The accuracy scores for each algorithm are as follows:
+    Algorithm A: [0.85, 0.80, 0.82, 0.87, 0.83]
+    Algorithm B: [0.78, 0.82, 0.84, 0.80, 0.79]
+    Algorithm C: [0.90, 0.88, 0.89, 0.86, 0.87]
+    Perform a Kruskal-Wallis test to determine if there is a significant difference in the median accuracy scores between the algorithms.
+
+Solution:
+
+import numpy as np
+from scipy.stats import kruskal
+
+a = np.array([0.85, 0.80, 0.82, 0.87, 0.83])
+b = np.array([0.78, 0.82, 0.84, 0.80, 0.79])
+c = np.array([0.90, 0.88, 0.89, 0.86, 0.87])
+statS, p_value = kruskal(a, b, c)
+print(p_value)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis. There is a significant difference in the median accuracy scores between the algorithms.")
+else:
+    print("Fail to reject the null hypothesis. There is not enough evidence to suggest a significant difference in the median accuracy scores.")
+
+Output: 
+0.008
+Reject the null hypothesis. There is a significant difference in the median accuracy scores between the algorithms.
+
+18. Scenario: A company wants to analyze the effect of price on sales. The data collected is as follows:
+    Price (in dollars): [10, 15, 12, 8, 14]
+    Sales: [100, 80, 90, 110, 95]
+    Perform a simple linear regression to predict sales based on price.
+
+Solution:
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+price = np.array([10, 15, 12, 8, 14]).reshape((-1, 1))
+sales = np.array([100, 80, 90, 110, 95])
+model = LinearRegression()
+model.fit(price, sales)
+print("Intercept:", model.intercept_)
+print("Slope:", model.coef_)
+
+Output:
+Intercept: 136.37
+Slope: [-3.50]
+
+19. Scenario: A survey is conducted to measure the satisfaction levels of customers with a new product. The data collected is as follows:
+    [7, 8, 9, 6, 8, 7, 9, 7, 8, 7]
+    Calculate the standard error of the mean satisfaction score.
+
+Solution:
+
+
+import numpy as np
+scores = np.array([7, 8, 9, 6, 8, 7, 9, 7, 8, 7])
+serror = np.std(scores, ddof=1) / np.sqrt(len(scores))
+print(serror)
+
+Output:
+0.306
+
+20. Scenario: A company wants to analyze the relationship between advertising expenditure and sales. The data collected is as follows:
+    Advertising Expenditure (in thousands): [10, 15, 12, 8, 14]
+    Sales (in thousands): [25, 30, 28, 20, 26]
+    Perform a multiple regression analysis to predict sales based on advertising expenditure.
+
+Solution:
+
+import numpy as np
+a = np.array([10, 15, 12, 8, 14])
+s = np.array([25, 30, 28, 20, 26])
+n = len(a)
+x_mean = np.mean(a)
+y_mean = np.mean(s)
+num = np.sum((a - x_mean) * (s - y_mean))
+den = np.sum((a - x_mean) ** 2)
+slope = num / den
+intercept = y_mean - slope * x_mean
+print("Intercept:", intercept)
+print("Slope:", slope)
+
+Output:
+Intercept: 12.20
+Slope: 1.15
