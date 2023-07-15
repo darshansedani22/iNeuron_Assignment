@@ -1,0 +1,863 @@
+1. Write a Python program to reverse a string without using any built-in string reversal functions.
+Solution:
+def func(l1):
+    words=l1.split(' ')
+    c=[word[::-1] for word in words]
+    result="".join(c)
+    return c
+    
+    
+l = input()
+result = func(l)
+print(result)
+
+2. Implement a function to check if a given string is a palindrome.
+Solution:
+def func(l1):
+    l1 = l1.replace(" ", "").lower()
+    return l1 == l1[::-1]
+    
+l = input()
+result = func(l)
+print(result)
+
+3. Write a program to find the largest element in a given list.
+Solution:
+def func(l):
+    return max(l)
+
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
+
+4. Implement a function to count the occurrence of each element in a list.
+Solution:
+def func(l):
+    d={}
+    n=len(l)
+    for i in range(len(l)):
+        d[i] = l.count(i)
+        n-=l.count(i)
+        if n<=0:
+            break
+    return d
+        
+
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
+
+5. Write a Python program to find the second largest number in a list.
+Solution:
+def func(l):
+    l.sort()
+    return l[-2]
+        
+
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
+
+6. Implement a function to remove duplicate elements from a list.
+
+Solution:
+def func(l):
+    s = set()
+    for i in l:
+        s.add(i)
+    return list(s)
+        
+
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
+
+
+7. Write a program to calculate the factorial of a given number.	
+
+Solution:
+
+def func(l):
+    if l == 0:
+        return 1
+    else:
+        sum = 1
+        for i in range(1, l + 1):
+            sum *= i
+        return sum
+
+import json
+l = int(input())
+result = func(l)
+print(result)
+
+8. Implement a function to check if a given number is prime.
+
+Solution:
+def func(l):
+    if l <= 1:
+        return False
+    for i in range(2, int(l**0.5) + 1):
+        if l % i == 0:
+            return False
+    return True
+
+import json
+l = int(input())
+result = func(l)
+print(result)
+
+
+
+9. Write a Python program to sort a list of integers in ascending order.
+
+Solution:
+
+def func(l):
+    n = len(l)
+    for i in range(n - 1):
+        for j in range(0, n - i - 1):
+            if l[j] > l[j + 1]:
+                l[j], l[j + 1] = l[j + 1], l[j]
+    return l
+
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
+
+10. Implement a function to find the sum of all numbers in a list.
+
+Solution:
+
+def func(l):
+    sum=0
+    for i in l:
+        sum+=i
+    return sum
+
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
+
+11. Write a program to find the common elements between two lists.
+
+Solution:
+
+def func(l,m):
+    s = set()
+    for i in l:
+        if i in m:
+            s.add(i)
+    return s
+    
+
+import json
+l = input()
+l = json.loads(l)
+m = input()
+m = json.loads(m)
+result = func(l,m)
+print(result)
+
+
+12. Implement a function to check if a given string is an anagram of another string.
+
+Solution:
+
+def func(l,m):
+    n = len(l)
+    g = []
+    c=[]
+    for i in range(0,n-2):
+        c=[l[i],l[i+1],l[i+2]]
+        g.append(c)
+    for i in g:
+        i.sort()
+    m = list(m)
+    m.sort()
+    c.clear()
+    print(g)
+    print(m)
+    for i in range(len(g)):
+        if g[i]==m:
+            c.append(i)
+    return c
+        
+l = input()
+m=input()
+result=func(l,m)
+print(result)
+
+13. Write a Python program to generate all permutations of a given string.
+
+Solution:
+
+def func(string):
+    if len(string) == 1:
+        return [string]
+    permutations = []
+    for i in range(len(string)):
+        char = string[i]
+        remaining_chars = string[:i] + string[i+1:]
+        sub_permutations = func(remaining_chars)
+        for sub_permutation in sub_permutations:
+            permutations.append(char + sub_permutation)
+    return permutations
+        
+l = input()
+result=func(l)
+print(result)
+
+14. Implement a function to calculate the Fibonacci sequence up to a given number of terms.
+
+Solution:
+
+
+def func(n):
+    sequence = []
+    if n <= 0:
+        return sequence
+    sequence.append(0)
+    if n > 1:
+        sequence.append(1)
+    while len(sequence) < n:
+        next_term = sequence[-1] + sequence[-2]
+        sequence.append(next_term)
+    return sequence
+        
+l = int(input())
+result=func(l)
+print(result)
+
+15. Write a program to find the median of a list of numbers.
+
+Solution:
+
+def func(l):
+    s = sorted(l)
+    n = len(s)
+    if n % 2 == 0:
+        mid1 = s[n // 2 - 1]
+        mid2 = s[n // 2]
+        m = (mid1 + mid2) / 2
+    else:
+        m = s[n // 2]
+    return m
+    
+import json    
+l = input()
+l = json.loads(l)
+result=func(l)
+print(result)
+
+16. Implement a function to check if a given list is sorted in non-decreasing order.
+
+Solution:
+
+def func(l):
+    c = l[::-1]
+    if c==l.sort():
+        return True
+    else:
+        return False
+    
+import json    
+l = input()
+l = json.loads(l)
+result=func(l)
+print(result)
+
+17. Write a Python program to find the intersection of two lists.
+
+Solution:
+
+def func(l,m):
+    n = []
+    for i in l:
+        if i in m:
+            n.append(i)
+    return n
+    
+import json    
+l = input()
+l = json.loads(l)
+m = input()
+m = json.loads(m)
+result=func(l,m)
+print(result)
+
+18. Implement a function to find the maximum subarray sum in a given list.
+
+Solution:
+
+def func(l):
+    maxx = 0
+    curr = 0
+    for n in l:
+        curr = max(n, curr + n)
+        maxx = max(maxx, curr)
+    
+    return maxx
+    
+import json    
+l = input()
+l = json.loads(l)
+result=func(l)
+print(result)
+
+19. Write a program to remove all vowels from a given string.
+
+Solution:
+
+def func(l):
+    v = ['a','e','i','o','u']
+    c=""
+    for i in l:
+        if i not in v:
+            c+=i
+    return c
+    
+l = input()
+result=func(l)
+print(result)
+
+20. Implement a function to reverse the order of words in a given sentence.
+
+Solution:
+def func(l):
+    words = l.split()
+    reversed_words = words[::-1]
+    l = " ".join(reversed_words)
+    return l
+    
+l = input()
+result=func(l)
+print(result)
+
+
+21. Write a Python program to check if two strings are anagrams of each other.
+
+Solution:
+
+def func(l,m):
+    n = len(l)
+    g = []
+    c=[]
+    for i in range(0,n-2):
+        c=[l[i],l[i+1],l[i+2]]
+        g.append(c)
+    for i in g:
+        i.sort()
+    m = list(m)
+    m.sort()
+    c.clear()
+    print(g)
+    print(m)
+    for i in range(len(g)):
+        if g[i]==m:
+            c.append(i)
+    return c
+        
+l = input()
+m=input()
+result=func(l,m)
+print(result)
+
+22. Implement a function to find the first non-repeating character in a string.
+
+Solution:
+
+def func(l):
+    d={}
+    n=len(l)
+    for i in range(len(l)):
+        d[i] = l.count(i)
+        n-=l.count(i)
+        if n<=0:
+            break
+    return d
+        
+
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
+
+
+23. Write a program to find the prime factors of a given number.
+
+Solution:
+
+def func(l):
+    p = []
+    d = 2
+    
+    while d <= l:
+        if l % d == 0:
+            p.append(d)
+            l = l // d
+        else:
+            d += 1
+    
+    return p
+        
+
+import json
+l = int(input())
+result = func(l)
+print(result)
+
+
+24. Implement a function to check if a given number is a power of two.
+
+Solution:
+
+def func(l):
+    if l <= 0:
+        return False
+    
+    return (l & (l - 1)) == 0
+        
+
+import json
+l = int(input())
+result = func(l)
+print(result)
+
+25. Write a Python program to merge two sorted lists into a single sorted list.
+
+Solution:
+
+def func(l1,l2):
+    m = []
+    i = 0  # index for list1
+    j = 0  # index for list2
+    
+    while i < len(l1) and j < len(l2):
+        if l1[i] < l2[j]:
+            m.append(l1[i])
+            i += 1
+        else:
+            m.append(l2[j])
+            j += 1
+    
+    # Append any remaining elements from list1 and list2
+    m.extend(l1[i:])
+    m.extend(l2[j:])
+    
+    return m
+        
+
+import json
+l1 = input()
+l1 = json.loads(l1)
+l2 = input()
+l2 = json.loads(l2)
+result = func(l1,l2)
+print(result)
+
+26. Implement a function to find the mode of a list of numbers.
+
+Solution:
+
+def func(l):
+    c = {}
+    for n in l:
+        if n in c:
+            c[n] += 1
+        else:
+            c[n] = 1
+    maxx = 0
+    mode = []
+    
+    for n, count in c.items():
+        if count > maxx:
+            maxx = count
+            mode = [n]
+        elif count == maxx:
+            mode.append(n)
+    return mode
+        
+
+import json
+l1 = input()
+l1 = json.loads(l1)
+result = func(l1)
+print(result)
+
+27. Write a program to find the greatest common divisor (GCD) of two numbers.
+
+Solution:
+
+def func(a,b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+        
+
+import json
+l1 = int(input())
+l2 = int(input())
+result = func(l1,l2)
+print(result)
+
+28. Implement a function to calculate the square root of a given number.
+
+Solution:
+
+def func(a):
+    if a < 0:
+        raise ValueError("Square root is not defined for negative numbers.")
+    guess = a / 2
+    print(a,guess)
+    while True:
+        new_guess = (guess + a / guess) / 2
+        if abs(new_guess - guess) < 1e-6:
+            return new_guess
+        guess = new_guess
+
+import json
+l1 = int(input())
+result = func(l1)
+print(result)
+
+29. Write a Python program to check if a given string is a valid palindrome ignoring non-alphanumeric characters.
+
+Solution:
+
+def func(l):
+    return l == l[::-1]
+
+import re
+l1 = input()
+l1 = re.sub(r'[^a-zA-Z0-9]', '', l1).lower()
+result = func(l1)
+print(result)
+
+30. Implement a function to find the minimum element in a rotated sorted list.
+
+Solution:
+
+def func(l):
+    start = 0
+    end = len(l) - 1
+    
+    while start < end:
+        mid = start + (end - start) // 2
+        
+        if l[mid] > l[end]:
+            start = mid + 1
+        else:
+            end = mid
+    
+    return l[start]
+    
+    
+import json
+l1 = input()
+l1 = json.loads(l1)
+result = func(l1)
+print(result)
+
+31. Write a program to find the sum of all even numbers in a list.
+
+Solution:
+
+def func(l):
+    sum=0
+    for i in l:
+        if i%2==0:
+            sum+=i
+    return sum
+    
+    
+import json
+l1 = input()
+l1 = json.loads(l1)
+result = func(l1)
+print(result)
+
+32. Implement a function to calculate the power of a number using recursion.
+
+Solution:
+
+def func(l,e):
+    if e == 0:
+        return 1
+    elif e < 0:
+        return 1 / func(l, -e)
+    else:
+        return l * func(l, e - 1)
+    
+import json
+l1 = int(input())
+l2 = int(input())
+result = func(l1,l2)
+print(result)
+
+33. Write a Python program to remove duplicates from a list while preserving the order.
+
+Solution:
+
+def func(l):
+    s = set()
+    m=[]
+    for i in l:
+        if i not in s:
+            s.add(i)
+            m.append(i)
+    return m
+    
+import json
+l1 = input()
+l1 = json.loads(l1)
+result = func(l1)
+print(result)
+
+34. Implement a function to find the longest common prefix among a list of strings.
+
+Solution:
+
+def func(strings):
+    if not strings:
+        return ""
+
+    shortest_string = min(strings, key=len)
+    
+    for i, char in enumerate(shortest_string):
+        for string in strings:
+            if string[i] != char:
+                return shortest_string[:i]
+    
+    return shortest_string
+    
+l1 = input()
+result = func(l1)
+print(result)
+
+35. Write a program to check if a given number is a perfect square.
+
+Solution:
+
+def func(l):
+    if l < 0:
+        return False
+    
+    if l == 0 or l == 1:
+        return True
+    
+    left, right = 1, l // 2
+    
+    while left <= right:
+        mid = left + (right - left) // 2
+        square = mid * mid
+        
+        if square == l:
+            return True
+        elif square < l:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return False
+    
+l1 = int(input())
+result = func(l1)
+print(result)
+
+36. Implement a function to calculate the product of all elements in a list.
+
+Solution:
+
+def func(l):
+    prod=1
+    for i in l:
+        prod*=i
+    return prod
+    
+import json
+l1 = input()
+l1 = json.loads(l1)
+result = func(l1)
+print(result)
+
+37. Write a Python program to reverse the order of words in a sentence while preserving the word order.
+
+Solution:
+
+
+def func(l):
+    words = l.split(' ')
+    reverse = [word[::-1] for word in words]
+    final = " ".join(reverse)
+    return final
+
+l1 = input()
+result = func(l1)
+print(result)
+
+38. Implement a function to find the missing number in a given list of consecutive numbers.
+
+Solution:
+
+def func(l):
+    for i in range(len(l)-1):
+        if l[i+1]-l[i]==2:
+            return l[i]+1
+
+import json
+l1 = input()
+l1 = json.loads(l1)
+result = func(l1)
+print(result)
+
+39. Write a program to find the sum of digits of a given number.
+
+Solution:
+
+
+def func(l):
+    sum = 0
+    while l > 0:
+        d = l % 10
+        sum += d
+        l //= 10
+    return sum
+    
+import json
+l1 = int(input())
+result = func(l1)
+print(result)
+
+40. Implement a function to check if a given string is a valid palindrome considering case sensitivity.
+
+Solution:
+
+def func(l):
+    alphanumeric_string = ''.join(ch.lower() for ch in l if ch.isalnum())
+    return alphanumeric_string == alphanumeric_string[::-1]
+    
+
+l1 = input()
+result = func(l1)
+print(result)
+
+
+
+42. Implement a function to find the longest palindrome substring in a given string.
+
+Solution:
+
+def func(l):
+    if len(l) < 2:
+        return l
+    longg = ""
+    for i in range(len(l)):
+        m, n = i, i
+        while m >= 0 and n < len(l) and l[m] == l[n]:
+            m -= 1
+            n += 1
+        podd = l[m + 1:n]
+        m, n = i, i + 1
+        while m >= 0 and n < len(l) and l[m] == l[n]:
+            m -= 1
+            n += 1
+        peven = l[m + 1:n]
+        if len(podd) > len(longg):
+            longg = podd
+        if len(peven) > len(longg):
+            longg = peven
+    return longg
+    
+l = input()
+result = func(l)
+print(result)
+
+43. Write a program to find the number of occurrences of a given element in a list.
+
+Solution:
+
+def func(l,m):
+    c = 0
+    for i in l:
+        if i == m:
+            c += 1
+    return c
+
+
+import json
+l = input()
+l = json.loads(l)
+m = int(input())
+result = func(l,m)
+print(result)
+
+44. Implement a function to check if a given number is a perfect number.
+
+Solution:
+
+def func(l):
+    if l <= 0:
+        return False
+    summ = sum(d for d in range(1, l) if l % d == 0)
+    return summ == l
+
+
+import json
+l = int(input())
+result = func(l)
+print(result)
+
+45. Write a Python program to remove all duplicates from a string.
+
+Solution:
+
+def func(l):
+    m = ""
+    for i in l:
+        if i not in m:
+            m += i
+    return m
+
+l = input()
+result = func(l)
+print(result)
+
+46. Implement a function to find the first missing positive
+
+Solution:
+
+def func(l):
+    n = len(l)
+    left = 0
+    for i in range(n):
+        if l[i] <= 0:
+            l[i], l[left] = l[left], l[i]
+            left += 1
+    for i in range(left, n):
+        k = abs(l[i])
+        if k <= n - left:
+            l[left + k - 1] = -abs(l[left + k - 1])
+    for i in range(left, n):
+        if l[i] > 0:
+            return left + i + 1
+    return left + n + 1
+
+import json
+l = input()
+l = json.loads(l)
+result = func(l)
+print(result)
