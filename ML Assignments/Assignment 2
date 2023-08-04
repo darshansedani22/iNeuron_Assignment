@@ -1,0 +1,74 @@
+1. What is the concept of human learning? Please give two examples.
+Answer:
+Human learning is the process by which individuals acquire new knowledge, skills, behaviors, or attitudes through experiences, observation, and practice. It involves the ability to adapt and modify behavior based on past experiences and feedback.
+- Example 1: Learning to ride a bicycle - A person starts with little or no knowledge of how to ride a bicycle. Through practice, trial, and error, they gradually learn to balance and control the bicycle, forming new motor skills and knowledge.
+- Example 2: Learning a new language - A person begins with limited understanding of the language, but through exposure, practice, and interaction with others, they develop vocabulary, grammar, and fluency in the language.
+
+2. What different forms of human learning are there? Are there any machine learning equivalents?
+Answer:
+- Supervised Learning (Human Equivalent: Learning from explicit instructions or labeled examples)
+- Unsupervised Learning (Human Equivalent: Learning from observation and finding patterns without specific guidance)
+- Reinforcement Learning (Human Equivalent: Learning by trial and error with rewards and punishments as feedback)
+
+3. What is machine learning, and how does it work? What are the key responsibilities of machine learning?
+Answer:
+Machine learning is a subset of artificial intelligence that focuses on the development of algorithms and models that allow computers to learn from data and improve their performance over time. It involves feeding data into the model, adjusting its parameters, and optimizing its predictions or decisions.
+   - Key Responsibilities of Machine Learning: Data preprocessing, feature engineering, model selection, hyperparameter tuning, model training, and evaluation.
+
+4. Define the terms "penalty" and "reward" in the context of reinforcement learning.
+Answer:
+In reinforcement learning, the terms "penalty" and "reward" refer to the feedback signals given to the learning agent based on its actions.
+
+   - Penalty: When the agent takes an undesirable or incorrect action, it receives a penalty signal, also known as negative reinforcement, to discourage that action in the future.
+   - Reward: When the agent takes a desirable or correct action, it receives a reward signal, also known as positive reinforcement, to encourage that action in the future.
+
+5. Explain the term "learning as a search"?
+Answer:
+Learning as a search refers to the idea of exploring the space of possible solutions to find the best model or parameters that minimize the error or loss function. The learning process involves adjusting the model's parameters through an iterative search to optimize its performance on the training data.
+
+6. What are the various goals of machine learning? What is the relationship between these and human learning?
+Answer:
+The main goals of machine learning include:
+   - Prediction: Making accurate predictions on new, unseen data.
+   - Classification: Categorizing data points into distinct classes or categories.
+   - Clustering: Grouping similar data points together based on their features.
+   - Anomaly Detection: Identifying unusual patterns or outliers in the data.
+   The relationship between machine learning goals and human learning is that both aim to acquire knowledge and patterns from data to make informed decisions or predictions.
+
+7. Illustrate the various elements of machine learning using a real-life illustration.
+Answer:
+Suppose we want to build a model that predicts whether a person will like a movie based on their age and movie genre preferences.
+
+   - Data Collection: Gather data on individuals, their ages, and movie genre preferences.
+   - Data Preprocessing: Clean the data, handle missing values, and convert categorical data into numerical format.
+   - Feature Engineering: Select relevant features, e.g., age and movie genre preferences.
+   - Model Selection: Choose an appropriate machine learning algorithm, such as logistic regression or decision trees.
+   - Model Training: Train the model on the data, adjusting its parameters to minimize prediction errors.
+   - Evaluation: Assess the model's performance on a separate validation dataset.
+   - Prediction: Use the trained model to predict whether a person will like a new movie based on their age and genre preferences.
+
+8. Provide an example of the abstraction method.
+Answer:
+In image recognition, abstraction involves extracting high-level features from images, such as edges, shapes, or textures, to represent the content of the image in a more concise and meaningful way. This abstraction helps machine learning models process images more efficiently and accurately.
+
+9. What is the concept of generalization? What function does it play in the machine learning process?
+Answer:
+Generalization refers to a model's ability to make accurate predictions on new, unseen data that it has not encountered during training. A well-generalized model can identify patterns and relationships in the data without memorizing the training examples, leading to better performance on unseen data.
+
+10. What is classification, exactly? What are the main distinctions between classification and regression?
+Answer:
+Classification is a machine learning task where the model predicts the category or class of a data point. Regression, on the other hand, is a task where the model predicts a continuous value or quantity. The primary distinction lies in the type of output the model produces: discrete categories for classification and continuous values for regression.
+
+11. What is regression, and how does it work? Give an example of a real-world problem that was solved using regression.
+Answer:
+An example of regression in a real-world problem is predicting house prices based on features like the number of bedrooms, square footage, location, etc. The model learns from historical data to estimate the continuous price value for a new house with given features.
+
+12. Describe the clustering mechanism in detail.
+Answer:
+Clustering is an unsupervised learning technique where the goal is to group similar data points together based on their features. It involves finding patterns or structures in the data without predefined class labels. The clusters are formed by minimizing intra-cluster distances while maximizing inter-cluster distances.
+
+13. Make brief observations on two of the following topics:
+i. Machine learning algorithms are used => Machine learning algorithms are used to build models that can learn patterns and make predictions from data, similar to how humans learn from experiences and observations.
+ii. Studying under supervision => This is akin to supervised learning, where the learning process involves explicit instructions or labeled examples, just as humans learn from guidance and feedback.
+iii. Studying without supervision => This corresponds to unsupervised learning, where the learning process involves finding patterns from data without explicit guidance, similar to how humans observe and discover patterns in their environment.
+iv. Reinforcement learning is a form of learning based on positive reinforcement. => This form of learning involves learning by trial and error with rewards and punishments as feedback, similar to how humans learn through experiences and consequences.
