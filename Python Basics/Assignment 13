@@ -1,0 +1,34 @@
+1. What advantages do Excel spreadsheets have over CSV spreadsheets?
+Answer:
+Advantages of Excel spreadsheets over CSV spreadsheets:
+   - Excel spreadsheets can store multiple sheets, allowing you to organize and manage data more efficiently.
+   - Excel supports various data types, formatting options, formulas, and charts, making it more versatile for complex data.
+   - Excel provides features like data validation, filtering, sorting, and advanced calculations, which are not available in CSV.
+   - Excel offers a user-friendly interface for data manipulation and visualization.
+
+2.What do you pass to csv.reader() and csv.writer() to create reader and writer objects?
+Answer:
+To create reader and writer objects in the `csv` module, you pass a File object opened in the appropriate mode to `csv.reader()` and `csv.writer()`, respectively.
+
+3. What modes do File objects for reader and writer objects need to be opened in?
+Answer:
+File objects for reader and writer objects need to be opened in text mode with the appropriate mode, for example:
+   - For reader: 'r' (read mode)
+   - For writer: 'w' (write mode) or 'a' (append mode)
+
+4. What method takes a list argument and writes it to a CSV file?
+Answer:
+The writerow() method takes a list argument and writes it as a row to a CSV file using a writer object.
+
+5. What do the keyword arguments delimiter and line terminator do?
+Answer:
+- delimiter: Specifies the character used to separate fields in the CSV file. The default delimiter is a comma (‘,’).
+   - line terminator: Specifies the character used to terminate lines in the CSV file. The default line terminator is the newline character (\n).
+
+6. What function takes a string of JSON data and returns a Python data structure?
+Answer:
+The json.loads() function takes a string of JSON data and returns a Python data structure (usually a dictionary or a list).
+
+7. What function takes a Python data structure and returns a string of JSON data?
+Answer:
+The json.dumps() function takes a Python data structure (e.g., a dictionary or a list) and returns a string of JSON data.
