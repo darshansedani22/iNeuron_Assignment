@@ -1,0 +1,28 @@
+1. Is the Python Standard Library included with PyInputPlus?
+Answer:
+No, the Python Standard Library is not included with PyInputPlus. PyInputPlus is a separate third-party library that provides additional functionalities for taking user input.
+
+2. Why is PyInputPlus commonly imported with import pyinputplus as pypi?
+Answer:
+PyInputPlus is commonly imported with the alias `pypi` to make the code shorter and easier to read. It is a common convention to use short aliases for third-party libraries to save typing and avoid name conflicts.
+
+3. How do you distinguish between inputInt() and inputFloat()?
+Answer:
+inputInt() is used to take input from the user and ensures that the input is an integer value. If the user enters a non-integer value, it raises an error. On the other hand, inputFloat() is used to take input and ensures that the input is a floating-point number. If the user enters a non-numeric value, it raises an error.
+
+4. Using PyInputPlus, how do you ensure that the user enters a whole number between 0 and 99?
+Answer:
+To ensure that the user enters a whole number between 0 and 99 using PyInputPlus, you can use the inputInt() function with the min and max arguments like this:
+import pyinputplus as pypi
+number = pypi.inputInt(prompt="Enter a number between 0 and 99: ", min=0, max=99)
+
+5. What is transferred to the keyword arguments allowRegexes and blockRegexes?
+Answer:
+The keyword arguments allowRegexes and blockRegexes in PyInputPlus are used to specify regular expressions. allowRegexes allows input that matches any of the specified regular expressions, and blockRegexes blocks input that matches any of the specified regular expressions. If the input matches any blockRegexes, an error is raised.
+6. If a blank input is entered three times, what does inputStr(limit=3) do?
+Answer:
+If a blank input is entered three times using inputStr(limit=3), the function will raise a TimeoutException after the third attempt, indicating that the limit of three tries has been reached.
+
+7. If blank input is entered three times, what does inputStr(limit=3, default='hello') do?
+Answer:
+If a blank input is entered three times using inputStr(limit=3, default='hello'), the function will return the default value 'hello' after the third attempt. The default argument provides a fallback value that is returned if the user does not provide valid input within the specified limit.
