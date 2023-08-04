@@ -1,0 +1,92 @@
+1. What does one mean by the term "machine learning"?
+Answer:
+Machine learning refers to a subset of artificial intelligence (AI) that involves creating algorithms and models that enable computers to learn and improve their performance on a specific task without being explicitly programmed for it. The focus is on developing systems that can automatically learn and improve from experience.
+
+2.Can you think of 4 distinct types of issues where it shines?
+Answer:
+Four distinct types of issues where machine learning shines are:
+   a. Image and speech recognition: Machine learning algorithms can excel in recognizing patterns in images and understanding speech, enabling applications like facial recognition and voice assistants.
+   b. Natural Language Processing (NLP): ML can process and understand human language, making it useful for language translation, sentiment analysis, and chatbots.
+   c. Recommender Systems: ML is used to recommend products, movies, music, etc., based on user preferences and behavior.
+   d. Anomaly Detection: Machine learning can identify unusual patterns or outliers in data, which is valuable for fraud detection, fault detection, and cybersecurity.
+
+3.What is a labeled training set, and how does it work?
+Answer:
+A labeled training set is a dataset used in supervised learning, where each example has both input features (data) and the corresponding output label (target). The model learns from this labeled data by making predictions and adjusting its parameters to minimize prediction errors.
+
+4.What are the two most important tasks that are supervised?
+Answer:
+The two most important supervised learning tasks are:
+   a. Classification: The model predicts a discrete category or class label, e.g., whether an email is spam or not.
+   b. Regression: The model predicts a continuous value, e.g., predicting house prices based on features like area and number of rooms.
+
+5.Can you think of four examples of unsupervised tasks?
+Answer:
+Four examples of unsupervised learning tasks are:
+   a. Clustering: Grouping similar data points together without explicit category labels.
+   b. Dimensionality Reduction: Reducing the number of input features while retaining important information.
+   c. Anomaly Detection: Identifying unusual patterns or outliers in data without labeled examples.
+   d. Density Estimation: Estimating the probability distribution of data.
+
+6.State the machine learning model that would be best to make a robot walk through various unfamiliar terrains?
+Answer:
+The best machine learning model to make a robot walk through various unfamiliar terrains would be a Reinforcement Learning model, where the robot learns to take actions in an environment to maximize rewards and achieve a specific goal.
+
+7.Which algorithm will you use to divide your customers into different groups?
+Answer:
+To divide customers into different groups, you can use clustering algorithms like K-Means or Hierarchical Clustering.
+
+8.Will you consider the problem of spam detection to be a supervised or unsupervised learning problem?
+Answer:
+Spam detection is typically considered a supervised learning problem, where the model is trained on labeled examples of spam and non-spam emails.
+
+9.What is the concept of an online learning system?
+Answer:
+The concept of an online learning system is that the model can be updated continuously and incrementally as new data becomes available. The model learns from new data on the fly without retraining on the entire dataset.
+
+10.What is out-of-core learning, and how does it differ from core learning?
+Answer:
+Out-of-core learning is a way of training models on large datasets that don't fit into memory. It involves loading and processing small batches of data at a time, rather than the whole dataset, to update the model parameters.
+
+11.What kind of learning algorithm makes predictions using a similarity measure?
+Answer:
+A learning algorithm that makes predictions using a similarity measure is called an instance-based or lazy learning algorithm. K-Nearest Neighbors (KNN) is an example of such an algorithm.
+
+12.What's the difference between a model parameter and a hyperparameter in a learning algorithm?
+Answer:
+In a learning algorithm, model parameters are learned from the data during training, while hyperparameters are set manually before training and control the model's behavior, such as the learning rate or the number of hidden layers in a neural network.
+
+13.What are the criteria that model-based learning algorithms look for? What is the most popular method they use to achieve success? What method do they use to make predictions?
+Answer:
+Model-based learning algorithms look for patterns and structure in the data to build a model that can generalize to new data. The most popular method they use is the process of minimizing a cost function during training. They make predictions by applying the learned model to new inputs.
+
+14.Can you name four of the most important Machine Learning challenges?
+Answer:
+Four important Machine Learning challenges are:
+   a. Overfitting: When a model performs well on the training data but fails to generalize to new data.
+   b. Data Preprocessing: Cleaning, transforming, and preparing data for training is often a challenging task.
+   c. Bias and Fairness: Addressing bias in data and models to ensure fairness in decision-making.
+   d. Interpretability: Understanding and explaining how ML models make predictions.
+
+15.What happens if the model performs well on the training data but fails to generalize the results to new situations? Can you think of three different options?
+Answer:
+If the model performs well on the training data but fails to generalize, three options to consider are:
+   a. Collect more diverse and representative data for training.
+   b. Simplify the model to reduce overfitting (e.g., using regularization techniques).
+   c. Use techniques like cross-validation to evaluate the model's performance on unseen data.
+
+16.What exactly is a test set, and why would you need one?
+Answer:
+A test set is a separate dataset used to evaluate the performance of a trained machine learning model on new, unseen data. It is used to estimate how well the model will perform in the real world.
+
+17.What is a validation set's purpose?
+Answer:
+The purpose of a validation set is to tune hyperparameters and evaluate different model variations during the training process. It helps in preventing overfitting to the test set.
+
+18.What precisely is the train-dev kit, when will you need it, how do you put it to use?
+Answer:
+The train-dev set is a subset of the training data used to evaluate the performance during development and debug issues. It is helpful to identify whether the model is overfitting the training data.
+
+19.What could go wrong if you use the test set to tune hyperparameters?
+Answer:
+If you use the test set to tune hyperparameters, you risk overfitting the model to the test data. The model may not generalize well to new, unseen data, leading to inaccurate performance estimates on real-world scenarios.
