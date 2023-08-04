@@ -1,0 +1,37 @@
+1. What does an empty dictionary's code look like?
+Answer:
+An empty dictionary's code looks like this: {}.
+
+2. What is the value of a dictionary value with the key 'foo' and the value 42?
+Answer:
+The value of a dictionary value with the key 'foo' and the value 42 looks like this: {'foo': 42}.
+
+3. What is the most significant distinction between a dictionary and a list?
+Answer:
+The most significant distinction between a dictionary and a list is their data structure. A dictionary is an unordered collection of key-value pairs, where each key is unique and used to access its associated value. On the other hand, a list is an ordered collection of elements, accessed by their position or index.
+
+4. What happens if you try to access spam['foo'] if spam is {'bar': 100}?
+Answer:
+If you try to access spam['foo'] when spam is {'bar': 100}, you will get a KeyError. This is because the key 'foo' does not exist in the dictionary spam.
+
+5. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.keys()?
+Answer:
+If a dictionary is stored in spam, the expression 'cat' in spam checks if the key 'cat' exists in the dictionary. It returns True if the key is present and False otherwise.
+
+6. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.values()?
+Answer:
+If a dictionary is stored in spam, the expression 'cat' in spam.values() checks if the value 'cat' exists in the dictionary's values. It returns True if the value is present and False otherwise.
+
+7. What is a shortcut for the following code?
+if 'color' not in spam:
+spam['color'] = 'black'
+Answer:
+The shortcut for the code `if 'color' not in spam: spam['color'] = 'black'` is to use the `setdefault()` method:
+spam.setdefault('color', 'black')
+
+8. How do you "pretty print" dictionary values using which module and function?
+Answer:
+You can "pretty print" dictionary values using the `pprint` module and its `pprint()` function. This function provides a more readable and well-formatted output for dictionaries:
+import pprint
+my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
+pprint.pprint(my_dict)
