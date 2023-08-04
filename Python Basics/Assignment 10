@@ -1,0 +1,35 @@
+1. How do you distinguish between shutil.copy() and shutil.copytree()?
+Answer:
+shutil.copy() is used to copy a single file from one location to another, while shutil.copytree() is used to recursively copy an entire directory tree (folder and its contents) to another location.
+
+2. What function is used to rename files??
+Answer:
+The function used to rename files is os.rename(). You can use this function to rename a file by providing its current name and the new name you want to give it.
+
+3. What is the difference between the delete functions in the send2trash and shutil modules?
+Answer:
+The difference between the delete functions in the send2trash and shutil modules is that send2trash sends files and directories to the system's recycle bin or trash instead of permanently deleting them, while shutil functions, such as shutil.rmtree() or os.unlink(), permanently delete the files and directories from the file system.
+
+4.ZipFile objects have a close() method just like File objects’ close() method. What ZipFile method is equivalent to File objects’ open() method?
+Answer:
+The ZipFile method that is equivalent to File objects' open() method is ZipFile() itself. You can create a new ZipFile object by calling ZipFile() with the file path and the desired mode, just like you would open a regular file.
+
+5. Create a programme that searches a folder tree for files with a certain file extension (such as .pdf or .jpg). Copy these files from whatever location they are in to a new folder.
+Answer:
+Below is a Python program that searches a folder tree for files with a certain file extension (e.g., `.pdf` or `.jpg`) and copies these files to a new folder:
+import os
+import shutil
+
+def copy_files_with_extension(source_folder, extension, destination_folder):
+    for foldername, subfolders, filenames in os.walk(source_folder):
+        for filename in filenames:
+            if filename.endswith(extension):
+                source_file = os.path.join(foldername, filename)
+                destination_file = os.path.join(destination_folder, filename)
+                shutil.copy(source_file, destination_file)
+
+# Example usage:
+source_folder = '/path/to/source_folder'
+destination_folder = '/path/to/destination_folder'
+file_extension = '.pdf'
+copy_files_with_extension(source_folder, file_extension, destination_folder)
