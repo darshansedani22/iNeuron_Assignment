@@ -1,0 +1,31 @@
+1. What does RGBA stand for?
+Answer:
+RGBA stands for Red, Green, Blue, and Alpha. It is a color model that represents colors with four components: the intensities of the red, green, and blue channels, and the alpha channel representing the transparency or opacity of the color.
+
+2. From the Pillow module, how do you get the RGBA value of any images?
+Answer:
+To get the RGBA value of any image using the Pillow module, you can use the getpixel() method of the Image object. For example: rgba_value = image.getpixel((x, y)), where x and y are the coordinates of the pixel.
+
+3. What is a box tuple, and how does it work?
+Answer:
+A box tuple in the context of Pillow is a tuple representing a rectangular region within an image. It is defined as (left, upper, right, lower) where (left, upper) is the top-left coordinate of the box, and (right, lower) is the bottom-right coordinate of the box.
+
+4. Use your image and load in notebook then, How can you find out the width and height of an Image object?
+Answer:
+To find out the width and height of an Image object, you can use the size attribute. For example: width, height = image.size.
+
+5. What method would you call to get Image object for a 100×100 image, excluding the lower-left quarter of it?
+Answer:
+To get an Image object for a 100×100 image, excluding the lower-left quarter of it, you can use the crop() method with a box tuple representing the region you want to keep. For example: cropped_image = image.crop((0, 0, 50, 50)).
+
+6. After making changes to an Image object, how could you save it as an image file?
+Answer:
+After making changes to an Image object, you can save it as an image file using the save() method of the Image object. For example: image.save("output.jpg").
+
+7. What module contains Pillow’s shape-drawing code?
+Answer:
+Pillow's shape-drawing code is contained in the ImageDraw module.
+
+8. Image objects do not have drawing methods. What kind of object does? How do you get this kind of object?
+Answer:
+Image objects do not have drawing methods. The ImageDraw object has drawing methods, and you can get this kind of object by calling the ImageDraw.Draw() function with the Image object as an argument. For example: draw = ImageDraw.Draw(image).
