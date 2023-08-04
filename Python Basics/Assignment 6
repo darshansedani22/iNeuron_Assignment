@@ -1,0 +1,42 @@
+1. What are escape characters, and how do you use them?
+Answer:
+Escape characters are special characters in strings that are used to represent characters that are difficult or impossible to type directly, such as newline or tab. They are preceded by a backslash (‘\’). For example, ‘\n’ represents a newline character, and ‘\t’ represents a tab character.
+
+2. What do the escape characters n and t stand for?
+Answer:
+The escape character ‘\n’ stands for a newline, and ‘\t’ stands for a tab.
+
+3. What is the way to include backslash characters in a string?
+Answer:
+To include a backslash character in a string, you need to escape it by using a double backslash (\\). For example, "This is a backslash: \\".
+
+4. The string "Howl's Moving Castle" is a correct value. Why isn't the single quote character in the word Howl's not escaped a problem?
+Answer:
+The single quote character in the word "Howl's" is not a problem because the string is enclosed in double quotes. Python allows using single quotes inside double quotes without the need to escape them.
+5. How do you write a string of newlines if you don't want to use the n character?
+Answer:
+To write a string with newlines without using the `\n` character, you can use triple quotes `'''` or `"""` to create multiline strings:
+multiline_string = '''Line 1
+Line 2
+Line 3'''
+6. What are the values of the given expressions?
+'Hello, world!'[1] => ‘e’
+'Hello, world!'[0:5] => ‘Hello’
+'Hello, world!'[:5] => ‘Hello’
+'Hello, world!'[3:] => ‘lo, world!’
+7. What are the values of the following expressions?
+'Hello'.upper() => ‘HELLO’
+'Hello'.upper().isupper() => ‘True’
+'Hello'.upper().lower() => ‘hello’
+
+8. What are the values of the following expressions?
+'Remember, remember, the fifth of July.'.split() => ['Remember,', 'remember,', 'the', 'fifth', 'of', 'July.']
+'-'.join('There can only one.'.split()) => 'There-can-only-one.'
+
+9. What are the methods for right-justifying, left-justifying, and centering a string?
+Answer:
+The methods for right-justifying, left-justifying, and centering a string are str.rjust(width, fillchar), str.ljust(width, fillchar), and str.center(width, fillchar), respectively.
+
+10. What is the best way to remove whitespace characters from the start or end?
+Answer:
+The best way to remove whitespace characters from the start or end of a string is to use the str.strip() method. If you only want to remove leading whitespaces, use str.lstrip(), and for trailing whitespaces, use str.rstrip().
