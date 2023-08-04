@@ -1,0 +1,71 @@
+1. Why are functions advantageous to have in your programs?
+Answer:
+Functions are used to create a set of code which we can use as many times as required and we don’t have to redundantly write them every time it is required.
+
+2. When does the code in a function run: when it's specified or when it's called?
+Answer: 
+The code in the function runs when the function is called by providing necessary arguments.
+
+3. What statement creates a function?
+Answer: 
+def function_name(var1,var2):
+This creates a function with name function_name which requires 2 input parameters.
+
+4. What is the difference between a function and a function call?
+Answer: 
+Function is set of code write which performs a particular task
+def add_numbers(a, b):
+    return a + b
+Function call is instruction that tells program to execute the function.
+result = add_numbers(3, 5)
+
+5. How many global scopes are there in a Python program? How many local scopes?
+Answer:
+In a Python program, there is one global scope and multiple local scopes.
+
+1. Global Scope: The global scope refers to the outermost level of the program, where variables are defined outside of any functions or code blocks. Variables defined in the global scope are accessible throughout the entire program, including within functions.
+
+global_var = 10
+
+2. Local Scopes: Local scopes are created when a function is called. Each function call creates its own local scope, and any variables defined within that function are only accessible within that function's scope. Local variables exist only for the duration of the function call and are not accessible outside the function.
+
+def my_function():
+    local_var = 20
+
+my_function()  # local_var is only accessible within the function my_function
+
+6. What happens to variables in a local scope when the function call returns?
+Answer: 
+When the function call returns, the local scope is destroyed, and the variables defined within that function are no longer accessible.
+
+7. What is the concept of a return value? Is it possible to have a return value in an expression?
+Answer: 
+The concept of a return value is the value that a function can send back to the caller after its execution. It allows a function to pass data back to the code that called it. Yes, it is possible to have a return value in an expression. You can use the return value of a function directly in expressions or assign it to a variable.
+
+8. If a function does not have a return statement, what is the return value of a call to that function?
+Answer:
+If a function does not have a return statement, the return value of a call to that function is `None`. `None` is a special Python object representing the absence of a value.
+
+9. How do you make a function variable refer to the global variable?
+Answer:
+To make a function variable refer to a global variable, you need to use the `global` keyword inside the function before assigning a value to the variable. This tells Python to use the global variable instead of creating a new local variable.
+
+10. What is the data type of None?
+Answer:
+The data type of `None` is `NoneType`. It is a unique data type in Python used to represent the absence of a value or a null value.
+
+11. What does the sentence import a reallyourpetsnamederic do?
+Answer:
+The sentence `import a reallyourpetsnamederic` is not a valid Python statement.
+
+12. If you had a bacon() feature in a spam module, what would you call it after importing spam?
+Answer: 
+After importing the spam module, you can call the ‘bacon() function using ‘spam.bacon()’.
+
+13. What can you do to save a programme from crashing if it encounters an error?
+Answer:
+To save a program from crashing if it encounters an error, you can use exception handling with a ‘try’ and ‘except’ block. By catching exceptions, you can handle errors gracefully and prevent the program from terminating abruptly.
+
+14. What is the purpose of the try clause? What is the purpose of the except clause?
+Answer:
+The purpose of the `try` clause is to enclose the code that might raise an exception. If an exception occurs within the `try` block, the program jumps to the `except` clause, where you can handle the exception by display an error message.
