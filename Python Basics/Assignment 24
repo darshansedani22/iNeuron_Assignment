@@ -1,0 +1,45 @@
+1. What is the relationship between def statements and lambda expressions?
+Answer:
+Both `def` statements and `lambda` expressions are used to create functions in Python.
+`def` statements are used to define regular named functions with a block of code that can have multiple statements and a return value.
+`lambda` expressions are used to create anonymous or nameless functions, often for simple operations. They consist of a single expression and automatically return its result.
+
+2. What is the benefit of lambda?
+Answer:
+Lambdas are concise and allow you to create small, throwaway functions without defining a full function using `def`.
+They are particularly useful when you need a simple function to be passed as an argument to another function (like in sorting or filtering operations).
+Lambdas are often used for short, one-time operations that don't need the overhead of a named function.
+
+3. Compare and contrast map, filter, and reduce.
+Answer:
+`map`, `filter`, and `reduce` are higher-order functions in Python that operate on iterable objects (lists, tuples, etc.).
+`map` applies a given function to each item in the iterable and returns a new iterable containing the results.
+`filter` applies a given function to each item in the iterable and returns a new iterable containing only the items that satisfy a certain condition.
+`reduce` (from the `functools` module) applies a given function to the items in the iterable in a cumulative way, reducing the sequence to a single value.
+
+4. What are function annotations, and how are they used?
+Answer:
+Function annotations are a way to attach metadata to function parameters and return values, providing additional information about the function's intended behavior.
+Annotations are specified using the colon `:` after the parameter or return value, followed by the annotation expression.
+Annotations can be any valid Python expression, and they don't affect the actual execution of the function. They can be accessed using the function's `__annotations__` attribute.
+
+5. What are recursive functions, and how are they used?
+Answer:
+Recursive functions are functions that call themselves in order to solve a problem by breaking it down into smaller subproblems.
+They are often used in situations where a problem can be divided into smaller instances of the same problem.
+A recursive function includes a base case (a condition where the recursion stops) and a recursive case (a case where the function calls itself with modified input).
+
+6. What are some general design guidelines for coding functions?
+Answer:
+Functions should have a clear and specific purpose (single responsibility principle).
+Keep functions short and focused, following the "Don't Repeat Yourself" (DRY) principle.
+Use meaningful names for functions and parameters that indicate their purpose.
+Avoid side effects and modify only local variables whenever possible.
+Use comments and docstrings to explain the purpose, usage, and expected behavior of functions.
+
+7. Name three or more ways that functions can communicate results to a caller.
+Answer:
+Return Statements: Functions can communicate results by using the `return` statement to pass back a value or multiple values.
+Global Variables: Functions can modify global variables to communicate results outside of the function's scope.
+Mutable Data Structures: Functions can modify mutable data structures (lists, dictionaries, etc.) and communicate results by changing the state of these structures.
+Function Parameters: Functions can modify mutable objects passed as parameters, and the caller can access the modified object after the function call.
