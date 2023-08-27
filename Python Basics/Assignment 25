@@ -1,0 +1,28 @@
+1) . What is the difference between enclosing a list comprehension in square brackets and parentheses?
+Answer:
+Enclosing a list comprehension in square brackets (`[...]`) creates a list containing the generated values from the comprehension.
+Enclosing a list comprehension in parentheses (`(...)`) creates a generator expression, which generates values lazily on-the-fly without creating a full list in memory. Generator expressions are memory-efficient but can only be iterated through once.
+
+2) What is the relationship between generators and iterators?
+Answer:
+Generators are a type of iterators. An iterator is an object that can be iterated (looped) over, and it provides the `__iter__()` and `__next__()` methods.
+Generators are a more concise way to create iterators using functions with the `yield` statement. They allow you to create iterators without the need to define a class with the `__iter__()` and `__next__()` methods.
+
+3) What are the signs that a function is a generator function?
+Answer:
+A generator function is defined using the `def` keyword.
+Inside the generator function, the `yield` statement is used to yield values instead of the `return` statement.
+When called, a generator function returns a generator object but does not immediately execute the function body.
+
+4) What is the purpose of a yield statement?
+Answer:
+The `yield` statement is used in generator functions to produce a value to be included in the generated sequence and temporarily "pauses" the function's execution state.
+When the generator is iterated over, the function resumes execution from where it left off after the last `yield` statement.
+This allows for lazy evaluation of values and memory-efficient generation of sequences.
+
+5) What is the relationship between map calls and list comprehensions? Make a comparison and contrast between the two.
+Answer:
+Both `map()` calls and list comprehensions are used to transform and process iterable objects (like lists).
+`map()` applies a function to each item in an iterable and returns an iterable containing the results. It's often used when the transformation logic is encapsulated in a separate function.
+List comprehensions create a new list by applying an expression to each item in an iterable and optionally filtering items based on a condition. They are more concise and readable for simple transformations.
+List comprehensions have the advantage of being immediately readable and often more concise, while `map()` requires the use of a separate function. However, `map()` can be used with functions that don't fit well within a comprehension, and it doesn't create an intermediate list in memory, making it memory-efficient for large datasets.
