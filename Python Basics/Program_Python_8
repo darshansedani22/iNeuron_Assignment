@@ -1,0 +1,85 @@
+1.	Write a Python Program to Add Two Matrices?
+Answer:
+def add_matrices(matrix1, matrix2):
+    result = [[0 for _ in range(len(matrix1[0]))] for _ in range(len(matrix1))]
+    for i in range(len(matrix1)):
+        for j in range(len(matrix1[0])):
+            result[i][j] = matrix1[i][j] + matrix2[i][j]
+    return result
+rows = int(input("Enter the number of rows: "))
+cols = int(input("Enter the number of columns: "))
+matrix1 = []
+matrix2 = []
+print("Enter elements of matrix1:")
+for i in range(rows):
+    row = [int(x) for x in input().split()]
+    matrix1.append(row)
+print("Enter elements of matrix2:")
+for i in range(rows):
+    row = [int(x) for x in input().split()]
+    matrix2.append(row)
+result = add_matrices(matrix1, matrix2)
+print("Matrix after addition:")
+for row in result:
+    print(row)
+
+2.	Write a Python Program to Multiply Two Matrices?
+Answer:
+def multiply_matrices(matrix1, matrix2):
+    result = [[0 for _ in range(len(matrix2[0]))] for _ in range(len(matrix1))]
+    for i in range(len(matrix1)):
+        for j in range(len(matrix2[0])):
+            for k in range(len(matrix2)):
+                result[i][j] += matrix1[i][k] * matrix2[k][j]
+    return result
+rows1 = int(input("Enter the number of rows for matrix1: "))
+cols1 = int(input("Enter the number of columns for matrix1: "))
+matrix1 = []
+matrix2 = []
+print("Enter elements of matrix1:")
+for i in range(rows1):
+    row = [int(x) for x in input().split()]
+    matrix1.append(row)
+rows2 = cols1
+cols2 = int(input("Enter the number of columns for matrix2: "))
+print("Enter elements of matrix2:")
+for i in range(rows2):
+    row = [int(x) for x in input().split()]
+    matrix2.append(row)
+result = multiply_matrices(matrix1, matrix2)
+print("Matrix after multiplication:")
+for row in result:
+    print(row)
+
+3.	Write a Python Program to Transpose a Matrix?
+Answer:
+def transpose_matrix(matrix):
+    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+rows = int(input("Enter the number of rows: "))
+cols = int(input("Enter the number of columns: "))
+matrix = []
+print("Enter elements of the matrix:")
+for i in range(rows):
+    row = [int(x) for x in input().split()]
+    matrix.append(row)
+transposed_matrix = transpose_matrix(matrix)
+print("Transposed matrix:")
+for row in transposed_matrix:
+    print(row)
+
+4.	Write a Python Program to Sort Words in Alphabetic Order?
+Answer:
+sentence = input("Enter a sentence: ")
+words = sentence.split()
+words.sort()
+sorted_sentence = ' '.join(words)
+print("Sorted sentence:", sorted_sentence)
+
+5.	Write a Python Program to Remove Punctuation From a String?
+Answer:
+import string
+def remove_punctuation(input_string):
+    return input_string.translate(str.maketrans('', '', string.punctuation))
+input_string = input("Enter a string: ")
+cleaned_string = remove_punctuation(input_string)
+print("String without punctuation:", cleaned_string)
