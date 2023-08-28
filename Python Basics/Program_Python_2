@@ -1,0 +1,43 @@
+1.	Write a Python program to convert kilometers to miles?
+Answer:
+kilometers = float(input("Enter distance in kilometers: "))
+conversion_factor = 0.621371
+miles = kilometers * conversion_factor
+print(f"{kilometers} kilometers is equal to {miles} miles")
+
+2.	Write a Python program to convert Celsius to Fahrenheit?
+Answer:
+celsius = float(input("Enter temperature in Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+print(f"{celsius} degrees Celsius is equal to {fahrenheit} degrees Fahrenheit")
+
+3.	Write a Python program to display calendar?
+Answer:
+import calendar
+year = int(input("Enter the year: "))
+month = int(input("Enter the month: "))
+cal = calendar.month(year, month)
+print("Calendar:")
+print(cal)
+
+4.	Write a Python program to solve quadratic equation?
+Answer:
+import math
+a = float(input("Enter coefficient a: "))
+b = float(input("Enter coefficient b: "))
+c = float(input("Enter coefficient c: "))
+discriminant = b**2 - 4*a*c
+if discriminant < 0:
+    print("No real roots")
+else:
+    root1 = (-b + math.sqrt(discriminant)) / (2*a)
+    root2 = (-b - math.sqrt(discriminant)) / (2*a)
+    print(f"Roots are: {root1} and {root2}")
+
+5.	Write a Python program to swap two variables without temp variable?
+Answer:
+a = input("Enter the value of a: ")
+b = input("Enter the value of b: ")
+print("Before swapping: a =", a, "b =", b)
+a, b = b, a
+print("After swapping: a =", a, "b =", b)
