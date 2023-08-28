@@ -1,0 +1,65 @@
+1.	Write a Python Program to Find the Factorial of a Number?
+Answer:
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+number = int(input("Enter a number: "))
+result = factorial(number)
+print(f"The factorial of {number} is {result}")
+
+2.	Write a Python Program to Display the multiplication Table?
+Answer:
+number = int(input("Enter a number: "))
+print(f"Multiplication table of {number}:")
+for i in range(1, 11):
+    print(f"{number} x {i} = {number * i}")
+
+3.	Write a Python Program to Print the Fibonacci sequence?
+Answer:
+def fibonacci(n):
+    fib_sequence = [0, 1]
+    while len(fib_sequence) < n:
+        fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+    return fib_sequence
+n = int(input("Enter the number of terms: "))
+fib_sequence = fibonacci(n)
+print("Fibonacci sequence:", fib_sequence)
+
+4.	Write a Python Program to Check Armstrong Number?
+Answer:
+number = int(input("Enter a number: "))
+original_number = number
+num_digits = len(str(number))
+sum = 0
+while number > 0:
+    digit = number % 10
+    sum += digit ** num_digits
+    number //= 10
+if sum == original_number:
+    print("Armstrong number")
+else:
+    print("Not an Armstrong number")
+
+5.	Write a Python Program to Find Armstrong Number in an Interval?
+Answer:
+lower = int(input("Enter lower bound: "))
+upper = int(input("Enter upper bound: "))
+print(f"Armstrong numbers between {lower} and {upper}:")
+for num in range(lower, upper + 1):
+    num_digits = len(str(num))
+    sum = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** num_digits
+        temp //= 10
+    if sum == num:
+        print(num, end=", ")
+
+6.	Write a Python Program to Find the Sum of Natural Numbers?
+Answer:
+n = int(input("Enter a natural number: "))
+sum = n * (n + 1) // 2
+print(f"The sum of the first {n} natural numbers is {sum}")
