@@ -1,0 +1,94 @@
+1.	Write a Python program to find sum of elements in list?
+Answer:
+def sum_of_elements(lst):
+    return sum(lst)
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+result = sum_of_elements(list_input)
+print(f"The sum of elements in the list is {result}")
+
+2.	Write a Python program to Multiply all numbers in the list?
+Answer:
+def multiply_numbers(lst):
+    result = 1
+    for num in lst:
+        result *= num
+    return result
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+result = multiply_numbers(list_input)
+print(f"The result of multiplying all numbers in the list is {result}")
+
+3.	Write a Python program to find smallest number in a list?
+Answer:
+def find_smallest(lst):
+    return min(lst)
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+smallest = find_smallest(list_input)
+print(f"The smallest number in the list is {smallest}")
+
+4.	Write a Python program to find largest number in a list?
+Answer:
+def find_largest(lst):
+    return max(lst)
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+largest = find_largest(list_input)
+print(f"The largest number in the list is {largest}")
+
+5.	Write a Python program to find second largest number in a list?
+Answer:
+def find_second_largest(lst):
+    lst.sort()
+    return lst[-2]
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+second_largest = find_second_largest(list_input)
+print(f"The second largest number in the list is {second_largest}")
+
+6.	Write a Python program to find N largest elements from a list?
+Answer:
+def find_n_largest(lst, n):
+    lst.sort()
+    return lst[-n:]
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+n = int(input("Enter the value of N: "))
+n_largest = find_n_largest(list_input, n)
+print(f"The {n} largest elements in the list are {n_largest}")
+
+7.	Write a Python program to print even numbers in a list?
+Answer:
+def even_numbers(lst):
+    return [num for num in lst if num % 2 == 0]
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+even_nums = even_numbers(list_input)
+print("Even numbers in the list:", even_nums)
+
+8.	Write a Python program to print odd numbers in a List?
+Answer:
+def odd_numbers(lst):
+    return [num for num in lst if num % 2 != 0]
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+odd_nums = odd_numbers(list_input)
+print("Odd numbers in the list:", odd_nums)
+
+9.	Write a Python program to Remove empty List from List?
+Answer:
+def remove_empty_lists(lst):
+    return [sublist for sublist in lst if sublist]
+list_input = [[], [1, 2], [], [3, 4, 5], [], [6, 7, 8]]
+cleaned_list = remove_empty_lists(list_input)
+print("List after removing empty sublists:", cleaned_list)
+
+10.	Write a Python program to Cloning or Copying a list?
+Answer:
+def clone_list(lst):
+    return lst.copy()
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+cloned_list = clone_list(list_input)
+print("Cloned list:", cloned_list)
+
+11.	Write a Python program to Count occurrences of an element in a list?
+Answer:
+def count_occurrences(lst, element):
+    return lst.count(element)
+list_input = [int(x) for x in input("Enter elements of the list separated by spaces: ").split()]
+element = int(input("Enter the element to count: "))
+occurrences = count_occurrences(list_input, element)
+print(f"The element {element} occurs {occurrences} times in the list")
