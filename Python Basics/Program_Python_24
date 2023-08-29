@@ -1,0 +1,115 @@
+Question1
+Create a function that takes an integer and returns a list from 1 to the given number, where:
+1.	If the number can be divided evenly by 4, amplify it by 10 (i.e. return 10 times the number).
+2.	If the number cannot be divided evenly by 4, simply return the number.
+Examples
+amplify(4) ➞ [1, 2, 3, 40]
+amplify(3) ➞ [1, 2, 3]
+amplify(25) ➞ [1, 2, 3, 40, 5, 6, 7, 80, 9, 10, 11, 120, 13, 14, 15, 160, 17, 18, 19, 200, 21, 22, 23, 240, 25]
+Notes
+•	The given integer will always be equal to or greater than 1.
+•	Include the number (see example above).
+•	To perform this problem with its intended purpose, try doing it with list comprehensions. If that's too difficult, just solve the challenge any way you can.
+
+Answer:
+def amplify(num):
+    return [x * 10 if x % 4 == 0 else x for x in range(1, num + 1)]
+input_num = int(input("Enter a number: "))
+result = amplify(input_num)
+print(result)
+
+Question2
+Create a function that takes a list of numbers and return the number that's unique.
+Examples
+unique([3, 3, 3, 7, 3, 3]) ➞ 7
+unique([0, 0, 0.77, 0, 0]) ➞ 0.77
+unique([0, 1, 1, 1, 1, 1, 1, 1]) ➞ 0
+Notes
+Test cases will always have exactly one unique number while all others are the same.
+
+Answer:
+def unique(numbers):
+    num_count = {}
+    for num in numbers:
+        if num in num_count:
+            num_count[num] += 1
+        else:
+            num_count[num] = 1
+    for num, count in num_count.items():
+        if count == 1:
+            return num
+input_list = [float(x) for x in input("Enter numbers separated by spaces: ").split()]
+result = unique(input_list)
+print(result)
+
+Question3
+Your task is to create a Circle constructor that creates a circle with a radius provided by an argument. The circles constructed must have two getters getArea() (PIr^2) and getPerimeter() (2PI*r) which give both respective areas and perimeter (circumference).
+For help with this class, I have provided you with a Rectangle constructor which you can use as a base example.
+Examples
+circy = Circle(11)
+circy.getArea()
+# Should return 380.132711084365
+circy = Circle(4.44)
+circy.getPerimeter()
+# Should return 27.897342763877365
+Notes
+Round results up to the nearest integer.
+
+Answer:
+import math
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    def getArea(self):
+        return round(math.pi * self.radius ** 2)
+    def getPerimeter(self):
+        return round(2 * math.pi * self.radius, 2)
+radius = float(input("Enter the radius of the circle: "))
+circy = Circle(radius)
+print("Area:", circy.getArea())
+print("Perimeter:", circy.getPerimeter())
+
+Question4
+Create a function that takes a list of strings and return a list, sorted from shortest to longest.
+Examples
+sort_by_length(["Google", "Apple", "Microsoft"])
+➞ ["Apple", "Google", "Microsoft"]
+sort_by_length(["Leonardo", "Michelangelo", "Raphael", "Donatello"])
+➞ ["Raphael", "Leonardo", "Donatello", "Michelangelo"]
+sort_by_length(["Turing", "Einstein", "Jung"])
+➞ ["Jung", "Turing", "Einstein"]
+Notes
+All test cases contain lists with strings of different lengths, so you won't have to deal with multiple strings of the same length.
+
+Answer:
+def sort_by_length(strings):
+    return sorted(strings, key=len)
+input_strings = input("Enter strings separated by spaces: ").split()
+result = sort_by_length(input_strings)
+print(result)
+
+Question5
+Create a function that validates whether three given integers form a Pythagorean triplet. The sum of the squares of the two smallest integers must equal the square of the largest number to be validated.
+Examples
+is_triplet(3, 4, 5) ➞ True
+# 3² + 4² = 25
+# 5² = 25
+is_triplet(13, 5, 12) ➞ True
+# 5² + 12² = 169
+# 13² = 169
+is_triplet(1, 2, 3) ➞ False
+# 1² + 2² = 5
+# 3² = 9
+Notes
+Numbers may not be given in a sorted order.
+
+Answer:
+def is_triplet(a, b, c):
+    sides = [a, b, c]
+    sides.sort()
+    return sides[0] ** 2 + sides[1] ** 2 == sides[2] ** 2
+a = int(input("Enter first side: "))
+b = int(input("Enter second side: "))
+c = int(input("Enter third side: "))
+result = is_triplet(a, b, c)
+print(result)
