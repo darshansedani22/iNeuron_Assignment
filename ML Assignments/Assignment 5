@@ -1,0 +1,122 @@
+1. What are the key tasks that machine learning entails? What does data pre-processing imply?
+Answer:
+Machine Learning Key Tasks:
+Data Collection: Gathering relevant data from various sources.
+Data Pre-processing: Cleaning, transforming, and preparing data for modeling.
+Feature Engineering: Selecting, creating, or transforming features to improve model performance.
+Model Selection: Choosing appropriate algorithms based on the problem and data.
+Model Training: Feeding data to algorithms to learn patterns and relationships.
+Model Evaluation: Assessing model performance using metrics like accuracy, precision, recall, etc.
+Model Tuning: Optimizing hyperparameters to improve model accuracy.
+Deployment: Integrating the trained model into real-world applications.
+
+Data Pre-processing:
+Data pre-processing involves preparing raw data for analysis or modeling by addressing issues like missing values, outliers, noise, and inconsistent formatting. It includes tasks such as:
+Data Cleaning: Handling missing values, duplicate entries, and errors.
+Data Transformation: Normalizing, scaling, or encoding features to ensure consistent scales and formats.
+Data Reduction: Reducing dimensionality to improve efficiency and reduce noise.
+Data Integration: Combining data from multiple sources to create a unified dataset.
+Data Formatting: Ensuring uniform data structure and format for analysis.
+
+2. Describe quantitative and qualitative data in depth. Make a distinction between the two.
+Answer:
+Quantitative Data:
+Numerical values that represent quantities.
+Can be discrete (countable) or continuous (measured).
+Examples: Age, weight, income, temperature.
+Used for mathematical operations and statistical analysis.
+
+Qualitative Data:
+Categorical or non-numerical data that represents categories or labels.
+Can be nominal (unordered categories) or ordinal (ordered categories).
+Examples: Gender (nominal), education level (ordinal), colors.
+Used for classification, grouping, and understanding patterns.
+
+3. Create a basic data collection that includes some sample records. Have at least one attribute from each of the machine learning data types.
+Answer:
+Sample Dataset (Attributes: Name, Age, Gender, Education Level):
+1. Alice, 28, Female, Bachelor's
+2. Bob, 35, Male, Master's
+3. Carol, 22, Female, High School
+4. David, 45, Male, PhD
+
+4. What are the various causes of machine learning data issues? What are the ramifications?
+Answer:
+Causes: Incomplete data, incorrect data entry, outliers, inconsistent formatting, bias.
+Ramifications: Reduced model accuracy, biased results, incorrect conclusions, unreliable predictions.
+
+5. Demonstrate various approaches to categorical data exploration with appropriate examples.
+Answer:
+Frequency Distribution: Count of each category.
+- Bar Plot: Visualization of categorical frequency.
+- Cross-Tabulation: Comparing two categorical variables.
+- Pivot Table: Summarizing data using multiple dimensions.
+- Chi-Square Test: Assessing independence between categorical variables.
+
+6. How would the learning activity be affected if certain variables have missing values? Having said that, what can be done about it?
+Answer:
+Impact: Missing values can lead to biased or incomplete analyses and modeling.
+Handling: Options include removing rows/columns, imputing with mean/median/mode, using advanced imputation techniques.
+
+7. Describe the various methods for dealing with missing data values in depth.
+Answer:
+Deleting: Removing rows/columns with missing values.
+- Imputation: Replacing missing values with calculated estimates.
+- Interpolation: Estimating missing values based on neighboring data.
+- Advanced Techniques: Using algorithms like KNN, regression for imputation.
+
+8. What are the various data pre-processing techniques? Explain dimensionality reduction and function selection in a few words.
+Answer:
+Dimensionality Reduction: Reducing the number of features while retaining important information.
+- Feature Selection: Selecting relevant features to improve model efficiency and interpretability.
+
+9.
+i. What is the IQR? What criteria are used to assess it?
+Answer:
+IQR (Interquartile Range): Range between the first quartile (Q1) and third quartile (Q3).
+- Box Plot Components: Box (IQR range), Median (Q2), Whiskers (1.5 * IQR), Outliers (beyond whiskers).
+
+ii. Describe the various components of a box plot in detail? When will the lower whisker surpass the upper whisker in length? How can box plots be used to identify outliers?
+Answer:
+Data with Nominal Values: Categorical data without inherent order.
+- Data with Ordinal Values: Categorical data with a meaningful order.
+- Histogram vs. Box Plot: Histogram shows data distribution, while a box plot shows median, quartiles, and outliers.
+- Average vs. Median: Average is the sum of values divided by count, median is the middle value in a sorted dataset.
+
+10. Make brief notes on any two of the following:
+1. Data collected at regular intervals
+Answer:
+Data collected at consistent time intervals.
+Used in time series analysis.
+Example: Stock prices collected daily.
+
+2. The gap between the quartiles
+Answer:
+Represents the spread of the middle 50% of data.
+Calculated as Q3 (upper quartile) - Q1 (lower quartile).
+Measures data dispersion.
+
+3. Use a cross-tab
+Answer:
+Cross-tabulation (cross-tab) is a table that shows the relationship between two categorical variables.
+Useful for analyzing patterns and relationships between variables.
+Example: Comparing gender and product preferences.
+
+11. Make a comparison between:
+1. Data with nominal and ordinal values
+Answer:
+Nominal Data: Represents categories or labels without any order or hierarchy. Examples: Colors, genders.
+Ordinal Data: Represents categories with a specific order or ranking. Differences between values may not be uniform. Examples: Education levels, and customer satisfaction ratings.
+Key Difference: Ordinal data has a meaningful order, while nominal data does not.
+
+2. Histogram and box plot
+Answer:
+Histogram: Visual representation of the distribution of continuous or discrete data. Bars represent frequency or count of data in each interval (bin).
+Box Plot: Visualizes the distribution and summary statistics of data. Includes median, quartiles, and potential outliers.
+Key Difference: Histogram shows data distribution directly, while a box plot summarizes distribution and identifies outliers.
+
+3. The average and median
+Answer:
+Average (Mean): Sum of all data values divided by the number of values. Sensitive to outliers.
+Median: Middle value when data is arranged in ascending order. Not affected by extreme values.
+Key Difference: Median is robust to outliers, making it suitable for skewed distributions.
