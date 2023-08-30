@@ -1,0 +1,55 @@
+1. What are the key tasks involved in getting ready to work with machine learning modeling?
+Answer:
+Before working with machine learning modeling, key tasks include:
+   - Data Preprocessing: Cleaning, handling missing values, and encoding categorical data.
+   - Feature Engineering: Selecting, transforming, and creating relevant features.
+   - Data Splitting: Dividing data into training, validation, and test sets.
+   - Model Selection: Choosing appropriate algorithms based on the problem.
+   - Hyperparameter Tuning: Optimizing model parameters for best performance.
+   - Evaluation Metrics: Defining metrics to assess model performance.
+   - Validation: Checking for overfitting and generalization ability.
+   - Model Deployment: Deploying the trained model for predictions.
+
+2. What are the different forms of data used in machine learning? Give a specific example for each of them.
+Answer:
+Numerical Data: Quantitative values (e.g., age, salary).
+Categorical Data: Discrete categories (e.g., gender, color).
+Text Data: Freeform text (e.g., reviews, tweets).
+Image Data: Pixel values in images (e.g., for image recognition).
+Time Series Data: Data points ordered by time (e.g., stock prices).
+
+3. Distinguish:
+1. Numeric vs. categorical attributes
+Answer:
+Numeric attributes are continuous numerical values (e.g., height, temperature), while categorical attributes represent categories or labels (e.g., color, gender).
+2. Feature selection vs. dimensionality reduction
+Answer:
+Feature selection involves selecting relevant features to reduce complexity and improve model performance. Dimensionality reduction (e.g., PCA) reduces data dimensionality while preserving important information.
+4. Make quick notes on any two of the following:
+
+1. The histogram -> A histogram is a graphical representation of data distribution. It shows the frequency of data points falling into specific bins (ranges).
+2. Use a scatter plot -> A scatter plot displays individual data points in a two-dimensional space, each representing a different attribute. It helps visualize relationships between variables.
+
+5. Why is it necessary to investigate data? Is there a discrepancy in how qualitative and quantitative data are explored?
+Answer:
+Investigating data is crucial to understand its characteristics, identify patterns, outliers, and relationships. Qualitative and quantitative data exploration might differ in techniques used, but both aim to uncover insights and inform decisions.
+
+6. What are the various histogram shapes? What exactly are ‘bins'?
+Answer:
+Various histogram shapes include normal (bell-shaped), skewed (positively or negatively), bimodal (two peaks), and uniform (constant frequency across bins). Bins are intervals into which data is divided for frequency analysis.
+
+7. How do we deal with data outliers?
+Answer:
+Outliers can be dealt with by removing, transforming, or imputing them. Techniques like z-score or IQR can identify and handle outliers effectively.
+
+8. What are the various central inclination measures? Why does mean vary too much from median in certain data sets?
+Answer:
+Central inclination measures include mean, median, and mode. Mean varies from median when data is skewed or has outliers, as mean is influenced by extreme values while median is resistant to outliers.
+
+9. Describe how a scatter plot can be used to investigate bivariate relationships. Is it possible to find outliers using a scatter plot?
+Answer:
+Scatter plots show how two variables are related. Patterns like positive/negative correlation, clusters, and outliers can be observed. Outliers may stand out as data points distant from the general trend.
+
+10. Describe how cross-tabs can be used to figure out how two variables are related.
+Answer:
+Cross-tabs (contingency tables) show how two categorical variables are related by displaying their frequencies in a table. They help identify associations and patterns between variables.
