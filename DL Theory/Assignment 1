@@ -1,0 +1,78 @@
+1.	What is the function of a summation junction of a neuron? What is threshold activation function?
+Answer:
+The summation junction in a neuron computes the weighted sum of inputs and bias.
+The threshold activation function compares the computed sum with a threshold value. If the sum is above the threshold, the neuron fires (output 1), otherwise it doesn't fire (output 0).
+
+2.	What is a step function? What is the difference of step function with threshold function?
+Answer:
+Step Function: A step function is a type of activation function that outputs a binary value (0 or 1) based on whether the input is above or below a certain threshold.
+Difference: The threshold function is a specific type of step function that has a fixed threshold value. A general step function can have different threshold values for different inputs.
+
+3.	Explain the McCulloch–Pitts model of neuron.
+Answer:
+The McCulloch–Pitts neuron model is a simplified model of a biological neuron. It takes binary inputs, computes a weighted sum, and fires an output based on a threshold. It played a foundational role in the development of neural networks.
+
+4.	Explain the ADALINE network model.
+Answer:
+ADALINE (Adaptive Linear Neuron) is a single-layer neural network with a linear activation function. It uses a continuous output and adapts its weights based on the difference between its output and a desired target using a learning rule.
+
+5.	What is the constraint of a simple perceptron? Why it may fail with a real-world data set?
+Answer:
+A simple perceptron can only learn linearly separable patterns.
+It may fail with real-world data sets that are not linearly separable, as it cannot capture complex patterns.
+
+6.	What is linearly inseparable problem? What is the role of the hidden layer?
+Answer:
+Linearly Inseparable Problem: A linearly inseparable problem is a classification problem where classes cannot be separated by a single straight line.
+Role of Hidden Layer: A hidden layer introduces non-linearity to the network, enabling it to learn and represent complex, non-linear relationships in the data.
+
+7.	Explain XOR problem in case of a simple perceptron.
+Answer:
+The XOR problem is not linearly separable and cannot be solved by a simple perceptron because it requires a non-linear decision boundary.
+
+8.	Design a multi-layer perceptron to implement A XOR B.
+Answer:
+Input layer: Two neurons for A and B.
+Hidden layer: Two neurons with a sigmoid activation function.
+Output layer: One neuron with a sigmoid activation function.
+Appropriate weights and biases should be trained to enable XOR logic.
+
+9.	Explain the single-layer feed forward architecture of ANN.
+Answer:
+A single-layer feed-forward ANN has an input layer and an output layer. Neurons in the input layer are connected directly to neurons in the output layer. It can only represent linear mappings.
+
+10.	Explain the competitive network architecture of ANN.
+Answer:
+Competitive networks are used for unsupervised learning and clustering. Neurons in this architecture compete to become active and represent different clusters in the input data.
+
+11.	Consider a multi-layer feed forward neural network. Enumerate and explain steps in the backpropagation algorithm used to train the network.
+Answer:
+Forward Pass: Compute the network's output using current weights.
+Compute Error: Calculate the error between the network's output and the target.
+Backward Pass: Update weights by propagating the error backward through the network and adjusting weights using gradient descent.
+
+12.	What are the advantages and disadvantages of neural networks?
+Answer:
+Advantages: Ability to learn complex patterns, non-linearity, adaptability, fault tolerance.
+Disadvantages: Requires large amounts of data, computationally intensive, black-box nature, potential overfitting.
+
+13.	Write short notes on any two of the following:
+1.Biological neuron
+Answer:
+Biological neurons are the inspiration behind artificial neural networks. They transmit information through synapses and exhibit complex behavior.
+
+2. ReLU function
+Answer:
+The Rectified Linear Unit (ReLU) is an activation function that outputs the input if it's positive, otherwise, it outputs zero.
+
+3. Single-layer feed forward ANN
+Answer:
+It's a simple architecture with only input and output layers, limited in its ability to represent complex relationships.
+
+4. Gradient descent
+Answer:
+Gradient descent is an optimization algorithm used to update weights in neural networks to minimize the error.
+
+5. Recurrent networks
+Answer:
+Recurrent neural networks (RNNs) have connections looping back, allowing them to process sequences of data and maintain memory.
