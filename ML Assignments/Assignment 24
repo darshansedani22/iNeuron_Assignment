@@ -1,0 +1,46 @@
+1. What is your definition of clustering? What are a few clustering algorithms you might think of?
+Answer:
+Clustering is the process of grouping similar data points together in such a way that data points in the same group (cluster) are more similar to each other than those in different groups. A few clustering algorithms include K-Means, Hierarchical Clustering, DBSCAN, and Gaussian Mixture Models.
+
+2. What are some of the most popular clustering algorithm applications?
+Answer:
+Clustering algorithms have various applications, including:
+Customer segmentation in marketing
+Image segmentation in computer vision
+Document categorization in text mining
+Social network analysis
+Anomaly detection in cybersecurity
+
+3. When using K-Means, describe two strategies for selecting the appropriate number of clusters.
+Answer:
+Two common strategies for selecting the appropriate number of clusters in K-Means are:
+Elbow Method: Plot the sum of squared distances (inertia) for different values of k and look for the "elbow point" where adding more clusters doesn't significantly reduce inertia.
+Silhouette Score: Calculate the silhouette score for different k values, which measures how close each data point in one cluster is to the data points in the neighboring clusters.
+
+4. What is mark propagation and how does it work? Why would you do it, and how would you do it?
+Answer:
+Mark propagation is a semi-supervised learning technique used for labeling unlabeled data points by propagating labels from a small labeled subset. It involves training a model on the labeled data and then using the model to predict labels for unlabeled data points. This can be useful when labeling a large dataset is time-consuming or expensive.
+
+5. Provide two examples of clustering algorithms that can handle large datasets. And two that look for high-density areas?
+Answer:
+Large Datasets: DBSCAN (Density-Based Spatial Clustering of Applications with Noise) and MiniBatchKMeans are suitable for handling large datasets efficiently.
+High-Density Areas: DBSCAN and OPTICS (Ordering Points To Identify the Clustering Structure) are designed to identify high-density regions in data.
+
+6. Can you think of a scenario in which constructive learning will be advantageous? How can you go about putting it into action?
+Answer:
+Constructive learning is advantageous in scenarios where the model starts with a simple representation and gradually builds complexity. One implementation could be in neural network training, where the network starts with a minimal architecture and adds more layers or neurons as needed while monitoring performance.
+
+7. How do you tell the difference between anomaly and novelty detection?
+Answer:
+Anomaly detection involves identifying instances that deviate significantly from the norm (outliers), while novelty detection focuses on identifying instances that differ from the training data but are still within the distribution of normal data.
+
+8. What is a Gaussian mixture, and how does it work? What are some of the things you can do about it?
+Answer:
+A Gaussian mixture model is a probabilistic model that assumes data points are generated from a mixture of several Gaussian distributions. It works by estimating the parameters of these Gaussian distributions and assigning data points to the most likely distribution. GMM can handle complex data distributions.
+
+9. When using a Gaussian mixture model, can you name two techniques for determining the correct number of clusters?
+Answer:
+Two techniques for determining the correct number of clusters in Gaussian mixture models are:
+Bayesian Information Criterion (BIC)
+Akaike Information Criterion (AIC)
+These criteria consider both model complexity and likelihood to help find the optimal number of clusters.
