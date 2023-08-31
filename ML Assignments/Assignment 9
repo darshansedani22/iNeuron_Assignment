@@ -1,0 +1,92 @@
+1. What is feature engineering, and how does it work? Explain the various aspects of feature engineering in depth.
+Answer:
+Feature engineering is the process of creating new features or transforming existing ones to enhance the performance of machine learning models. It involves selecting, transforming, and creating features from raw data to improve model accuracy. Key aspects of feature engineering include:
+   Feature Extraction: Extracting relevant information from raw data. E.g., from text data, extracting word frequencies.
+   Feature Transformation: Scaling, normalizing, or applying mathematical functions to features.
+   Feature Creation: Combining or generating new features based on existing ones.
+
+2. What is feature selection, and how does it work? What is the aim of it? What are the various methods of function selection?
+Answer:
+Feature selection is the process of choosing a subset of relevant features from the original set to improve model performance and reduce overfitting. The aim is to eliminate irrelevant or redundant features. Methods include:
+   Filter Methods: Evaluates features independently of the model using statistical measures.
+   Wrapper Methods: Involves using the model's performance as a criterion for feature selection.
+   Embedded Methods: Incorporates feature selection within the model training process.
+
+3. Describe the function selection filter and wrapper approaches. State the pros and cons of each approach?
+Answer:
+Filter Approach for Feature Selection:
+Filter approaches involve evaluating features using statistical measures, independent of the machine learning model. Features are ranked based on their relevance and importance, and a threshold is set to select the top-ranking features.
+Pros: Simple, computationally efficient, model-independent.
+Cons: Ignores feature interactions, potential exclusion of relevant features.
+Wrapper Approach for Feature Selection:
+Wrapper approaches use a machine learning model to evaluate subsets of features. It involves training and evaluating the model on different feature subsets to identify the best-performing subset.
+Pros: Considers feature interactions, better model performance, flexible.
+Cons: Computationally expensive, prone to overfitting, not ideal for high-dimensional data.
+
+4.
+i. Describe the overall feature selection process.
+Answer:
+1. Generate Candidate Features: This step involves creating a set of candidate features from the original data. These features can be raw attributes or derived through various methods like feature engineering.
+
+2. Evaluate Features: In this step, each candidate feature is evaluated based on its relevance and importance to the task at hand. There are different methods for evaluation, including statistical tests, correlation analysis, and machine learning model performance.
+
+3. Select Subset: After evaluating candidate features, a subset of the most relevant features is selected. The selection method can vary and may include techniques like filter methods (statistical measures), wrapper methods (model performance), or embedded methods (model-specific feature selection).
+
+4. Assess Model Performance: Once the feature selection is done, the selected subset of features is used to train and evaluate a machine learning model. The model's performance is assessed using metrics such as accuracy, precision, recall, F1-score, etc.
+
+5. Iterate and Validate: The feature selection process may involve multiple iterations to fine-tune the selected features and validate the model's performance on unseen data.
+
+ii. Explain the key underlying principle of feature extraction using an example. What are the most widely used function extraction algorithms?
+Answer:
+The key principle of feature extraction is to transform the original data into a new feature space that captures essential information while reducing dimensionality. This helps in reducing noise and improving the performance of machine learning models.
+1. Principal Component Analysis (PCA): Reduces data dimensions while retaining most of the variance.
+2. Linear Discriminant Analysis (LDA): Maximizes class separability for classification tasks.
+3. Independent Component Analysis (ICA): Extracts statistically independent components from mixed signals.
+4. Non-Negative Matrix Factorization (NMF): Decomposes non-negative data into additive components.
+
+5. Describe the feature engineering process in the sense of a text categorization issue.
+Answer:
+In text categorization, feature engineering involves transforming text data into numerical features like word frequencies or TF-IDF scores. It also includes techniques like n-grams and removing stop words. The goal is to create a representation suitable for machine learning algorithms.
+
+6. What makes cosine similarity a good metric for text categorization? A document-term matrix has two rows with values of (2, 3, 2, 0, 2, 3, 3, 0, 1) and (2, 1, 0, 0, 3, 2, 1, 3, 1). Find the resemblance in cosine.
+Answer:
+Cosine similarity measures the cosine of the angle between two vectors. It's effective for text data where documents are represented as vectors. For the given vectors, the cosine similarity is calculated as the dot product divided by the product of their magnitudes.
+
+7.
+i. What is the formula for calculating Hamming distance? Between 10001011 and 11001111, calculate the Hamming gap.
+Answer:
+Count of differing bits between two binary strings. For 10001011 and 11001111, the Hamming distance is 2.
+
+ii. Compare the Jaccard index and similarity matching coefficient of two features with values (1, 1, 0, 0, 1, 0, 1, 1) and (1, 1, 0, 0, 0, 1, 1, 1), respectively (1, 0, 0, 1, 1, 0, 0, 1).
+Answer:
+Measures similarity between two sets. For the given sets, Jaccard Index = Intersection / Union = 3 / 6 = 0.5.
+
+8. State what is meant by  "high-dimensional data set"? Could you offer a few real-life examples? What are the difficulties in using machine learning techniques on a data set with many dimensions? What can be done about it?
+Answer:
+A high-dimensional data set has a large number of features or dimensions compared to the number of data points. Examples include genetic data with thousands of genes or images with many pixels. Difficulties include the curse of dimensionality, increased computational complexity, and increased risk of overfitting. Dimensionality reduction techniques like PCA can help address these issues.
+
+9. Make a few quick notes on:
+1. PCA is an acronym for Personal Computer Analysis.
+Answer:
+A dimensionality reduction technique, not related to Personal Computer Analysis.
+
+2. Use of vectors
+Answer:
+Vectors represent data points in a feature space.
+
+3. Embedded technique
+Answer:
+Incorporates feature selection within the model training process.
+
+10. Make a comparison between:
+1. Sequential backward exclusion vs. sequential forward selection
+Answer:
+One removes features iteratively, the other adds them.
+
+2. Function selection methods: filter vs. wrapper
+Answer:
+One evaluates features independently, the other uses model performance.
+
+3. SMC vs. Jaccard coefficient
+Answer:
+Both are similarity measures, but SMC considers shared features, while Jaccard considers set intersections.
