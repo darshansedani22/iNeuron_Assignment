@@ -1,0 +1,62 @@
+1.	Define the Bayesian interpretation of probability.
+Answer:
+The Bayesian interpretation of probability is a concept in which probability is viewed as a measure of uncertainty based on the observer's prior knowledge and new evidence. It involves updating probabilities as new information becomes available. Bayes' theorem is central to this interpretation, allowing the calculation of conditional probabilities given prior probabilities and new evidence.
+
+2.	Define probability of a union of two events with equation.
+Answer:
+The probability of the union of two events A and B is given by:
+   P(A ∪ B) = P(A) + P(B) - P(A ∩ B)s
+
+3.	What is joint probability? What is its formula?
+Answer:
+Joint probability refers to the probability of two or more events occurring simultaneously. It's denoted as P(A ∩ B) and calculated using the formula:
+   P(A ∩ B) = P(A) * P(B|A)
+
+4.	What is chain rule of probability?
+Answer:
+The chain rule of probability states that the joint probability of multiple events can be calculated by multiplying the conditional probabilities of each event given the previous event. Mathematically:
+   P(A ∩ B ∩ C) = P(A) * P(B|A) * P(C|A ∩ B)
+
+5.	What is conditional probability means? What is the formula of it?
+Answer:
+Conditional probability is the probability of an event A occurring given that event B has already occurred. It's calculated using the formula:
+   P(A|B) = P(A ∩ B) / P(B)
+
+6.	What are continuous random variables?
+Answer:
+Continuous random variables are variables that can take any real value within a certain range. They are associated with continuous probability distributions. Examples include height, weight, and time.
+
+7.	What are Bernoulli distributions? What is the formula of it?
+Answer:
+The Bernoulli distribution models a single binary outcome (success/failure) with probability p for success and (1 - p) for failure. The probability mass function is given by:
+   P(X = x) = p^x * (1 - p)^(1 - x), where x ∈ {0, 1}
+
+8.	What is binomial distribution? What is the formula?
+Answer:
+The binomial distribution models the number of successes in a fixed number of independent Bernoulli trials. It's characterized by parameters n (number of trials) and p (probability of success). The probability mass function is given by:
+   P(X = k) = C(n, k) * p^k * (1 - p)^(n - k), where k is the number of successes.
+
+9.	What is Poisson distribution? What is the formula?
+Answer:
+The Poisson distribution models the number of events occurring in a fixed interval of time or space, given the average rate of occurrence (λ). The probability mass function is given by:
+   P(X = k) = (e^(-λ) * λ^k) / k!
+
+10.	Define covariance.
+Answer:
+Covariance measures the degree to which two random variables change together. It's calculated as the expected value of the product of the deviations of each variable from their respective means.
+
+11.	Define correlation
+Answer:
+Correlation measures the strength and direction of the linear relationship between two variables. It ranges from -1 to +1, where +1 indicates a perfect positive linear correlation, -1 indicates a perfect negative linear correlation, and 0 indicates no linear correlation.
+
+12.	Define sampling with replacement. Give example.
+Answer:
+Sampling with replacement is a process where a sample is selected from a population, and after each selection, the selected item is put back into the population before the next selection. Example: Drawing cards from a deck and putting the card back after each draw.
+
+13.	What is sampling without replacement? Give example.
+Answer:
+Sampling without replacement is a process where a sample is selected from a population, and once an item is selected, it is not put back into the population for the next selection. Example: Selecting contestants for a raffle without putting the selected names back into the pool.
+
+14.	What is hypothesis? Give example.
+Answer:
+A hypothesis is a statement or assumption about a population parameter that can be tested using statistical methods. It often involves comparing sample data to the hypothesis to draw conclusions about the population. Example: Testing whether a new drug is more effective than an existing one in treating a certain condition.
