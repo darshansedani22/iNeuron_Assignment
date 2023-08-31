@@ -1,0 +1,55 @@
+1. What is prior probability? Give an example.
+Answer:
+Prior probability, also known as prior belief or prior distribution, is the initial probability assigned to an event or hypothesis before considering any new evidence or data. It represents the probability of an event based on existing information.
+Example: In medical diagnosis, the prior probability of a patient having a certain disease could be estimated based on historical data about the prevalence of the disease in the general population.
+
+2. What is posterior probability? Give an example.
+Answer:
+Posterior probability is the updated probability of an event or hypothesis after incorporating new evidence or data. It is calculated using Bayes' theorem, which combines the prior probability and the likelihood of the evidence.
+Example: After performing a medical test on a patient, the posterior probability of the patient having a disease is calculated by combining the prior probability with the likelihood of the test result given the disease status.
+
+3. What is likelihood probability? Give an example.
+Answer:
+Likelihood probability represents how well the observed evidence supports a particular hypothesis. It indicates the probability of observing the evidence given the hypothesis is true.
+Example: In a coin toss experiment, the likelihood probability of getting "heads" three times in a row given that the coin is fair is calculated using the probability of "heads" occurring in a single toss.
+
+4. What is Naïve Bayes classifier? Why is it named so?
+Answer:
+The Naive Bayes classifier is a probabilistic machine learning algorithm used for classification tasks. It assumes that the features are conditionally independent given the class label, simplifying the calculation of probabilities. Despite its assumption of feature independence (which is often not met in reality), the classifier is simple, efficient, and performs well on various tasks.
+Naming: It's called "Naive" because of the naive assumption of feature independence, and "Bayes" because it's based on Bayes' theorem.
+
+5. What is optimal Bayes classifier?
+Answer:
+The optimal Bayes classifier, also known as the Bayes optimal classifier, is a theoretical classifier that achieves the minimum possible error rate for a given classification problem. It's based on Bayes' theorem and considers all available information to make the best classification decisions.
+
+6. Write any two features of Bayesian learning methods.
+Answer:
+Incorporation of prior knowledge or beliefs through prior probabilities.
+Adaptation and updating of probabilities based on new evidence or data.
+
+7. Define the concept of consistent learners.
+Answer:
+Consistent learners are machine learning algorithms that converge to the true underlying model as the amount of training data increases. They produce increasingly accurate predictions as more data is provided.
+
+8. Write any two strengths of Bayes classifier.
+Answer:
+Effective for small datasets and high-dimensional feature spaces.
+Handles missing data and noisy features well due to the probabilistic framework.
+
+9. Write any two weaknesses of Bayes classifier.
+Answer:
+The assumption of feature independence in Naive Bayes can be limiting in some cases.
+Sensitive to the quality of prior probabilities and assumptions.
+
+10. Explain how Naive Bayes classifier is used for
+1. Text classification
+Answer:
+Naive Bayes is widely used for classifying text documents into categories such as spam detection, sentiment analysis, and topic classification.
+
+2. Spam filtering
+Answer:
+It can identify whether an email is spam or not by analyzing the content and structure of the email.
+
+3. Market sentiment analysis
+Answer:
+Naive Bayes can determine the sentiment (positive, negative, neutral) of social media posts, reviews, or comments related to products or stocks.
