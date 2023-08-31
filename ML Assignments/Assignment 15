@@ -1,0 +1,108 @@
+1. Recognize the differences between supervised, semi-supervised, and unsupervised learning.
+Answer:
+Supervised Learning: In supervised learning, the algorithm learns from labeled training data to make predictions or decisions. It requires both input data and corresponding target labels for training.
+Semi-Supervised Learning: In semi-supervised learning, the algorithm uses a combination of labeled and unlabeled data for training. It leverages the additional unlabeled data to improve performance.
+Unsupervised Learning: In unsupervised learning, the algorithm learns patterns and relationships within data without using any labeled information. It aims to discover hidden structures, clusters, or associations.
+
+2. Describe in detail any five examples of classification problems.
+Answer:
+Email Spam Detection: Classify emails as spam or not spam based on their content.
+Image Object Recognition: Identify objects in images (e.g., cats, dogs) based on visual features.
+Disease Diagnosis: Determine whether a patient has a specific disease based on symptoms and medical test results.
+Sentiment Analysis: Classify text as positive, negative, or neutral sentiment based on its content.
+Credit Card Fraud Detection: Identify fraudulent credit card transactions from legitimate ones.
+
+3. Describe each phase of the classification process in detail.
+Answer:
+Data Collection: Gather relevant data with features and corresponding labels.
+Data Preprocessing: Clean, transform, and normalize the data. Handle missing values and outliers.
+Feature Selection/Engineering: Select relevant features or create new ones to improve model performance.
+Model Selection: Choose a suitable classification algorithm based on the problem and data characteristics.
+Model Training: Train the selected model on the labeled training data.
+Model Evaluation: Assess the model's performance using metrics like accuracy, precision, recall, and F1-score.
+Hyperparameter Tuning: Optimize hyperparameters to improve model performance.
+Model Deployment: Deploy the trained model for making predictions on new, unseen data.
+
+4. Go through the SVM model in depth using various scenarios.
+Answer:
+The Support Vector Machine (SVM) model aims to find a hyperplane that best separates different classes while maximizing the margin between them. It works well with both linear and non-linear data through kernel functions. SVM finds support vectors that lie closest to the decision boundary and uses them to define the boundary. The cost parameter regulates the trade-off between misclassification and margin width. SVM handles binary and multi-class classification and can address overfitting through proper regularization.
+
+5. What are some of the benefits and drawbacks of SVM?
+Answer:
+Benefits:
+Effective in high-dimensional spaces.
+Robust against overfitting (with proper tuning).
+Works well for binary and multi-class classification.
+Can handle both linear and non-linear data.
+Drawbacks:
+Computationally expensive for large datasets.
+Requires proper selection of hyperparameters.
+Complex to interpret compared to simpler models.
+Can be sensitive to noisy data.
+
+6. Go over the kNN model in depth.
+Answer:
+kNN is a non-parametric classification algorithm that makes predictions based on the majority class of its k nearest neighbors in the feature space. It works well for non-linear data and requires no explicit training. During prediction, the algorithm calculates distances between the input data point and all training instances. It then selects the k nearest neighbors and assigns the majority class as the prediction.
+
+7. Discuss the kNN algorithm's error rate and validation error.
+Answer:
+The kNN algorithm's error rate can be affected by the choice of k. A small k may lead to high variance (overfitting), while a large k may lead to high bias (underfitting). The validation error can help identify the optimal k value by evaluating the model's performance on a validation set.
+
+8. For kNN, talk about how to measure the difference between the test and training results.
+Answer:
+The difference between test and training results can be measured using metrics like accuracy, precision, recall, and F1-score. These metrics provide insights into the model's performance on both training and unseen test data.
+
+9. Create the kNN algorithm.
+Answer:
+Choose the value of k.
+For each test data point, calculate distances to all training data points.
+Select the k nearest neighbors.
+Assign the majority class of the neighbors as the prediction for the test point.
+
+10. What is a decision tree, exactly? What are the various kinds of nodes? Explain all in depth.
+Answer:
+A decision tree is a hierarchical structure that represents a sequence of decisions and their consequences. It consists of nodes and branches. Nodes are decision points, including root, internal, and leaf nodes. Root node represents the first decision, internal nodes represent intermediate decisions, and leaf nodes represent final outcomes.
+
+11. Describe the different ways to scan a decision tree.
+Answer:
+Pre-order: Start from the root and visit nodes in the order root → left subtree → right subtree.
+In-order: Visit nodes in the order left subtree → root → right subtree (used in binary trees).
+Post-order: Visit nodes in the order left subtree → right subtree → root.
+
+12. Describe in depth the decision tree algorithm.
+Answer:
+Select a feature to split the data based on a criterion (e.g., information gain, Gini impurity).
+Split the data into subsets at the chosen feature's threshold.
+Recursively apply the above steps to each subset until a stopping criterion is met (e.g., maximum depth, minimum samples per leaf).
+Assign the majority class of instances in each leaf node as the prediction.
+
+13. In a decision tree, what is inductive bias? What would you do to stop overfitting?
+Answer:
+Inductive bias in decision trees refers to the assumptions made about the target function and the preferred hypotheses. To prevent overfitting, strategies like pruning and limiting tree depth can be applied.
+
+14.Explain advantages and disadvantages of using a decision tree?
+Answer:
+Advantages:
+Easy to understand and interpret.
+Handles both categorical and numerical data.
+Can capture non-linear relationships.
+Requires minimal data preprocessing.
+Disadvantages:
+Prone to overfitting, especially with deep trees.
+Sensitive to small changes in data.
+    - Can create biased trees if one class dominates.
+
+15. Describe in depth the problems that are suitable for decision tree learning.
+Answer:
+Classification problems with discrete and continuous attributes.
+Problems with non-linear relationships.
+Problems with easily interpretable models.
+
+16. Describe in depth the random forest model. What distinguishes a random forest?
+Answer:
+Random Forest is an ensemble learning method that builds multiple decision trees and combines their predictions to improve accuracy and reduce overfitting. It introduces randomness by selecting subsets of data and features for each tree. The final prediction is based on a majority vote from individual trees.
+
+17. In a random forest, talk about OOB error and variable value.
+Answer:
+OOB (Out-of-Bag) Error: Error estimation using data not used for training each tree.
+Variable Importance: Measures the impact of each feature on model accuracy by analyzing the decrease in accuracy when a feature is randomly permuted.
