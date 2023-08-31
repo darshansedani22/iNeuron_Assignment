@@ -1,0 +1,83 @@
+1. Using a graph to illustrate slope and intercept, define basic linear regression.
+Answer:
+Basic linear regression aims to find the best-fitting line that represents the relationship between two variables. The equation is often represented as y = mx + b, where y is the dependent variable, x is the independent variable, m is the slope, and b is the y-intercept. The slope represents how much y changes for a unit change in x, and the intercept is the point where the line crosses the y-axis.
+
+ 
+
+2. In a graph, explain the terms rise, run, and slope.
+Answer:
+Rise: The vertical change between two points on a graph.
+Run: The horizontal change between the same two points.
+Slope: The ratio of the rise to the run, indicating how steep the line is.
+
+ 
+
+3. Use a graph to demonstrate slope, linear positive slope, and linear negative slope, as well as the different conditions that contribute to the slope.
+Answer:
+Linear Positive Slope: As x increases, y also increases.
+Linear Negative Slope: As x increases, y decreases.
+ 
+
+4. Use a graph to demonstrate curve linear negative slope and curve linear positive slope.
+Answer:
+Curve Linear Positive Slope: The curve rises as x increases.
+Curve Linear Negative Slope: The curve falls as x increases.
+ 
+
+5. Use a graph to show the maximum and low points of curves.
+Answer:
+Curves can have maximum (peak) and minimum (valley) points.
+ 
+
+6. Use the formulas for a and b to explain ordinary least squares.
+Answer:
+OLS is a method to find the best-fitting line by minimizing the sum of squared differences between observed and predicted values.
+Equation: y = ax + b
+a (slope) formula: a = Σ((xi - x̄)(yi - ȳ)) / Σ((xi - x̄)²)
+b (intercept) formula: b = ȳ - a * x̄
+
+7. Provide a step-by-step explanation of the OLS algorithm.
+Answer:
+Calculate the means of x and y (x̄ and ȳ).
+Calculate the differences between each x and x̄, and each y and ȳ.
+Calculate the sum of squared differences and the cross-product of differences.
+Calculate the slope (a) using the formula mentioned above.
+Calculate the intercept (b) using the formula.
+Formulate the regression line y = ax + b.
+
+8. What is the regression's standard error? To represent the same, make a graph.
+Answer:
+Standard error measures the dispersion of actual values from the regression line.
+ 
+
+9. Provide an example of multiple linear regression.
+Answer:
+In multiple linear regression, more than one independent variable influences the dependent variable. For instance, predicting house price (dependent) based on features like size, number of rooms, and location (independents).
+
+10. Describe the regression analysis assumptions and the BLUE principle.
+Answer:
+Assumptions include linearity, independence of errors, constant variance of errors, and normality of errors. The BLUE (Best Linear Unbiased Estimators) principle ensures the OLS method gives unbiased and efficient estimates.
+
+11. Describe two major issues with regression analysis.
+Answer:
+Multicollinearity (high correlation between predictors) can cause coefficient instability. Heteroskedasticity (unequal error variance) affects the reliability of parameter estimates.
+
+12. How can the linear regression model's accuracy be improved?
+Answer:
+Collecting more relevant data, selecting important features, dealing with outliers, and considering non-linear relationships can enhance model accuracy.
+
+13. Using an example, describe the polynomial regression model in detail.
+Answer:
+Polynomial regression fits a curve line to data points. For example, predicting sales (Y) based on advertising spend (X) using a quadratic or cubic equation.
+
+14. Provide a detailed explanation of logistic regression.
+Answer:
+Logistic regression is used for binary classification tasks. It models the probability of an event occurring using the logistic function. The output is transformed into a probability value between 0 and 1.
+
+15. What are the logistic regression assumptions?
+Answer:
+Assumptions include linearity of the log-odds, independence of errors, and lack of multicollinearity.
+
+16. Go through the details of maximum likelihood estimation.
+Answer:
+MLE is a method to estimate the parameters of a statistical model by maximizing the likelihood function. It finds the parameter values that make the observed data most probable.
