@@ -1,0 +1,52 @@
+1. What is the difference between supervised and unsupervised learning? Give some examples to illustrate your point.
+Answer:
+Supervised Learning: In supervised learning, the algorithm is trained on a labeled dataset where the input data and corresponding output labels are provided. The goal is to learn a mapping function that can predict the labels for new, unseen data.
+Example: Classifying emails as spam or not spam based on labeled data.
+Unsupervised Learning: In unsupervised learning, the algorithm is trained on an unlabeled dataset where only input data is provided. The goal is to find patterns, structures, or groupings in the data without explicit labels.
+Example: Clustering similar customer groups based on purchasing behavior without predefined categories.
+
+2. Mention a few unsupervised learning applications.
+Answer:
+Clustering: Grouping similar items, customers, or data points.
+Anomaly Detection: Identifying unusual patterns or outliers.
+Dimensionality Reduction: Reducing the number of features while preserving information.
+Topic Modeling: Discovering underlying topics in a text corpus.
+
+3. What are the three main types of clustering methods? Briefly describe the characteristics of each.
+Answer:
+Hierarchical Clustering: Builds a hierarchy of clusters by iteratively merging or splitting them. Creates dendrograms to visualize the process.
+K-Means Clustering: Divides data into K clusters by minimizing the sum of squared distances between data points and cluster centroids.
+Density-Based Clustering: Identifies areas of high data density to form clusters, suitable for irregularly shaped clusters.
+
+4. Explain how the k-means algorithm determines the consistency of clustering.
+Answer:
+K-Means algorithm aims to minimize the sum of squared distances between data points and their cluster centroids. It iteratively assigns data points to the nearest centroid and recalculates centroids. The algorithm is consistent because as iterations progress, the assignment of data points to clusters becomes stable, and centroids converge to a consistent solution.
+
+5. With a simple illustration, explain the key difference between the k-means and k-medoids algorithms.
+Answer:
+K-Means uses the mean of data points in a cluster as the centroid, while K-Medoids uses the actual data point that minimizes the sum of distances within the cluster. K-Medoids is less sensitive to outliers compared to K-Means.
+
+6. What is a dendrogram, and how does it work? Explain how to do it.
+Answer:
+A dendrogram is a tree-like diagram used in hierarchical clustering to visualize the process of merging clusters. It represents data points as leaves and shows how clusters are formed and merged. The vertical axis represents the distance between clusters, and horizontal lines show the merging process.
+
+7. What exactly is SSE? What role does it play in the k-means algorithm?
+Answer:
+SSE is the sum of squared distances between each data point and its corresponding cluster centroid. It quantifies the compactness of clusters. K-Means aims to minimize SSE to ensure that data points within each cluster are close to their centroid.
+
+8. With a step-by-step algorithm, explain the k-means procedure.
+Answer:
+Choose the number of clusters (K).
+Initialize K cluster centroids randomly.
+Assign each data point to the nearest centroid.
+Recalculate centroids by taking the mean of data points in each cluster.
+Repeat steps 3 and 4 until convergence (centroids no longer change significantly).
+
+9. In the sense of hierarchical clustering, define the terms single link and complete link.
+Answer:
+Single Linkage: Measures the distance between the closest pair of data points from different clusters. It tends to form long, stringy clusters.
+Complete Linkage: Measures the distance between the farthest pair of data points from different clusters. It tends to form compact, spherical clusters.
+
+10. How does the apriori concept aid in the reduction of measurement overhead in a business basket analysis? Give an example to demonstrate your point.
+Answer:
+The Apriori algorithm is used to find frequent item sets in transactional datasets. It reduces measurement overhead by identifying item sets that meet a minimum support threshold. For example, in a retail store, identifying commonly purchased items together (e.g., bread and milk) can help optimize shelf placement or promotional offers.
