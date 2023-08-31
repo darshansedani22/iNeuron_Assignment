@@ -1,0 +1,80 @@
+1. What is the definition of a target function? In the sense of a real-life example, express the target function. How is a target function's fitness assessed?
+Answer:
+Example: Predicting house prices using features like size, location, and amenities.
+Fitness Assessment: Compare model's predictions to actual values using evaluation metrics.
+
+2. What are predictive models, and how do they work? What are descriptive types, and how do you use them? Examples of both types of models should be provided. Distinguish between these two forms of models.
+Answer:
+Predictive Models: Make predictions on new, unseen data. E.g., Linear Regression for predicting sales based on advertising spend.
+Descriptive Models: Describe patterns and relationships in data. E.g., Clustering to group customers based on behavior.
+
+3. Describe the method of assessing a classification model's efficiency in detail. Describe the various measurement parameters.
+Answer:
+Accuracy, Precision, Recall, F1-Score, ROC Curve, AUC, Confusion Matrix.
+
+4. 
+i. In the sense of machine learning models, what is underfitting? What is the most common reason for underfitting?
+Answer:
+Model too simple, doesn't capture data's complexity. Common reason: Insufficient model complexity.
+
+ii. What does it mean to overfit? When is it going to happen?
+Answer:
+Model too complex, fits noise. Happens when model is too flexible relative to data size.
+
+iii. In the sense of model fitting, explain the bias-variance trade-off.
+Answer:
+Balancing model's ability to fit data vs. generalize to new data.
+
+5. Is it possible to boost the efficiency of a learning model? If so, please clarify how.
+Answer:
+Use ensemble methods like boosting to combine multiple models for improved accuracy.
+
+6. How would you rate an unsupervised learning model's success? What are the most common success indicators for an unsupervised learning model?
+Answer:
+Success indicators: Clustering's separation, dimensionality reduction's explained variance, pattern discovery.
+
+7. Is it possible to use a classification model for numerical data or a regression model for categorical data with a classification model? Explain your answer.
+Answer:
+No, models are designed for specific tasks. Classification models predict classes, regression models predict numeric values.
+
+8. Describe the predictive modeling method for numerical values. What distinguishes it from categorical predictive modeling?
+Answer:
+Numerical: Use regression models (e.g., Linear Regression).
+Categorical: Use classification models (e.g., Decision Trees, SVM).
+
+9. The following data were collected when using a classification model to predict the malignancy of a group of patients' tumors:
+i. Accurate estimates – 15 cancerous, 75 benign
+ii. Wrong predictions – 3 cancerous, 7 benign
+Determine the model's error rate, Kappa value, sensitivity, precision, and F-measure.
+Answer:
+Error Rate: (Wrong Predictions) / (Total Predictions)->10/90->0.11
+Kappa Value: Measures agreement beyond chance. -> Calculating Kappa requires the observed and expected agreement. Without the expected distribution, I cannot calculate Kappa accurately.
+Sensitivity: True Positives / (True Positives + False Negatives)-> 15/(15+3)->0.833
+Precision: True Positives / (True Positives + False Positives)->15/(15+7)->0.682
+F-Measure: 2 * (Precision * Sensitivity) / (Precision + Sensitivity) -> 2* (0.682*0.833) / (0.682+0.833) ->0.75
+
+10. Make quick notes on:
+1. The process of holding out
+Answer:
+Splitting data into training and testing sets.
+
+2. Cross-validation by tenfold
+Answer:
+Splitting data into 10 subsets, using each as test set while others as training.
+
+3. Adjusting the parameters
+Answer:
+Fine-tuning model hyperparameters for better performance.
+
+11. Define the following terms: 
+1. Purity vs. Silhouette width
+Answer:
+Purity measures how homogeneous clusters are. Silhouette Width measures cluster separation.
+
+2. Boosting vs. Bagging
+Answer:
+Boosting sequentially improves weak models. Bagging aggregates predictions from multiple models.
+
+3. The eager learner vs. the lazy learner
+Answer:
+Eager learner constructs a generalized model before data is seen. Lazy learner waits until data is provided before generalizing.
